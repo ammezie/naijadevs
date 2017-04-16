@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html class="no-js" lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Naijadevs connects talented Nigerian developers and designers with companies who needs them.">
 
     <!-- CSRF Token -->
@@ -41,10 +41,10 @@
 </head>
 <body>
     <div id="app">
-        <div class="uk-container">
+        {{-- <div class="uk-container">
             <nav uk-navbar>
                 <div class="uk-navbar-left">
-                    {{-- <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a> --}}
+                    <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
                     <a href="{{ url('/') }}" class="uk-navbar-item uk-logo">
                         <img src="{{ asset('images/logo.png') }}" alt="Naijadevs Logo">
                     </a>
@@ -81,7 +81,31 @@
                     </ul>
                 </div>
             </nav>
-        </div>
+        </div> --}}
+
+        <div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Site Title</li>
+      <li>
+        <a href="#">One</a>
+        <ul class="menu vertical">
+          <li><a href="#">One</a></li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
+</div>
 
 
         @yield('content')

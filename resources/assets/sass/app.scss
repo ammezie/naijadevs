@@ -1,9 +1,6 @@
+// Settings
+@import "settings";
 
-// Fonts
-// @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
-// Variables
-@import "variables";
-
-// UIkit
-@import "node_modules/uikit/src/scss/uikit.theme.scss";
+// Foundation
+@import "node_modules/foundation-sites/scss/foundation.scss";
+@include foundation-everything;

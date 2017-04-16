@@ -15,13 +15,13 @@ class CreateAdvertsTable extends Migration
     {
         Schema::create('adverts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedInteger('user_id');
             $table->string('title');
             $table->text('description');
             $table->string('apply');
-            $table->integer('type')->unsigned();
+            $table->unsignedInteger('type');
             $table->string('location');
-            $table->string('salary')->nullabe();
+            $table->string('salary')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')
