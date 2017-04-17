@@ -23,6 +23,7 @@
                                     type="text"
                                     name="name"
                                     class="{{ $errors->has('name') ? ' is-danger' : '' }}"
+                                    value="{{ old('name') }}"
                                     placeholder="Name"
                                     aria-describedby="nameHelpText"
                                     required>
@@ -40,6 +41,7 @@
                                     type="email"
                                     name="email"
                                     class="{{ $errors->has('email') ? ' is-danger' : '' }}"
+                                    value="{{ old('email') }}"
                                     placeholder="Email"
                                     aria-describedby="emailHelpText"
                                     required>
@@ -96,6 +98,7 @@
                                     type="text"
                                     name="company_name"
                                     class="{{ $errors->has('company_name') ? ' is-danger' : '' }}"
+                                    value="{{ old('company_name') }}"
                                     placeholder="Company Name"
                                     aria-describedby="companyNameHelpText"
                                     required>
@@ -113,6 +116,7 @@
                                     type="text"
                                     name="company_website"
                                     class="{{ $errors->has('company_website') ? ' is-danger' : '' }}"
+                                    value="{{ old('company_website') }}"
                                     placeholder="http://company.com"
                                     aria-describedby="companyWebsiteHelpText"
                                     required>
