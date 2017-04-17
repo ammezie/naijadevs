@@ -1,76 +1,143 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
+    <section class="signup-page">
+        <div class="row align-center">
+            <div class="small-12 medium-7 large-7 columns">
+                <h3 class="text-center">Create New Account</h3>
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                <form method="POST" action="{{ route('register') }}" class="uk-form-stacked">
+                    {{ csrf_field() }}
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    <div class="row">
+                        <div class="small-12 medium-12 large-12 columns">
+                            <p class="lead heading-divider">Personal Details</p>
                         </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="small-12 medium-6 large-6 columns">
+                            <label>
+                                Name <span class="required">*</span>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="{{ $errors->has('name') ? ' is-danger' : '' }}"
+                                    placeholder="Name"
+                                    aria-describedby="nameHelpText"
+                                    required>
+                            </label>
+                            @if ($errors->has('name'))
+                                <p class="help-text is-danger" id="nameHelpText">
+                                    {{ $errors->first('name') }}
+                                </p>
+                            @endif
                         </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="small-12 medium-6 large-6 columns">
+                            <label>
+                                Email <span class="required">*</span>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="{{ $errors->has('email') ? ' is-danger' : '' }}"
+                                    placeholder="Email"
+                                    aria-describedby="emailHelpText"
+                                    required>
+                            </label>
+                            @if ($errors->has('email'))
+                                <p class="help-text is-danger" id="emailHelpText">
+                                    {{ $errors->first('email') }}
+                                </p>
+                            @endif
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
+                    <div class="row">
+                        <div class="small-12 medium-6 large-6 columns">
+                            <label>
+                                Password <span class="required">*</span>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    class="{{ $errors->has('password') ? ' is-danger' : '' }}"
+                                    placeholder="Password"
+                                    aria-describedby="passwordHelpText"
+                                    required>
+                            </label>
+                            @if ($errors->has('password'))
+                                <p class="help-text is-danger" id="passwordHelpText">
+                                    {{ $errors->first('password') }}
+                                </p>
+                            @endif
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
+                        <div class="small-12 medium-6 large-6 columns">
+                            <label>
+                                Confirm Password <span class="required">*</span>
+                                <input
+                                    type="password"
+                                    name="password_confirmation"
+                                    placeholder="Confirm Password"
+                                    required>
+                            </label>
                         </div>
-                    </form>
-                </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 medium-12 large-12 columns">
+                            <p class="lead heading-divider">Company Details</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 medium-6 large-6 columns">
+                            <label>
+                                Company Name <span class="required">*</span>
+                                <input
+                                    type="text"
+                                    name="company_name"
+                                    class="{{ $errors->has('company_name') ? ' is-danger' : '' }}"
+                                    placeholder="Company Name"
+                                    aria-describedby="companyNameHelpText"
+                                    required>
+                            </label>
+                            @if ($errors->has('company_name'))
+                                <p class="help-text is-danger" id="companyNameHelpText">
+                                    {{ $errors->first('company_name') }}
+                                </p>
+                            @endif
+                        </div>
+                        <div class="small-12 medium-6 large-6 columns">
+                            <label>
+                                Company Website <span class="required">*</span>
+                                <input
+                                    type="text"
+                                    name="company_website"
+                                    class="{{ $errors->has('company_website') ? ' is-danger' : '' }}"
+                                    placeholder="http://company.com"
+                                    aria-describedby="companyWebsiteHelpText"
+                                    required>
+                            </label>
+                            @if ($errors->has('company_website'))
+                                <p class="help-text is-danger" id="companyWebsiteHelpText">
+                                    {{ $errors->first('company_website') }}
+                                </p>
+                            @endif
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="button expanded primary">SIGN UP</button>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="medium-12 columns">
+                            <p class="text-center">
+                                Already got an account? <a href="{{ route('login') }}">Log In</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection

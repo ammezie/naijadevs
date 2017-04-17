@@ -1,0 +1,23 @@
+.heading-divider {
+	padding-bottom: 6px;
+	border-bottom: 1px solid #cacaca
+}
+
+.is-danger {
+	color: $alert-color;
+}
+
+input.is-danger,
+textarea.is-danger {
+	border-color: $alert-color
+}
+
+.required {
+	color: $alert-color;
+	font-weight: bold
+}
+
+.login-page,
+.signup-page {
+	padding: 50px
+}

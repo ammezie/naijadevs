@@ -1,53 +1,57 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="uk-container">
-        <div class="uk-flex uk-flex-center">
-            <form method="POST" action="{{ route('login') }}" class="uk-form-stacked">
-                {{ csrf_field() }}
-                <h3 class="uk-heading-bullet">Login</h3>
+    <section class="login-page">
+        <div class="row align-center">
+            <div class="medium-4 columns">
+                <h3 class="text-center">Welcome Back!</h3>
 
-                <div class="uk-margin">
-                    <label for="email" class="uk-form-label">Email</label>
-                    <div class="uk-form-controls">
-                        <div class="uk-inline">
-                            <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                            <input type="email" name="email" class="uk-input" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <label for="password" class="uk-form-label">Password</label>
-                    <div class="uk-form-controls">
-                        <div class="uk-inline">
-                            <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                            <input type="password" name="password" class="uk-input" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <label class="uk-form-label">
-                        <input type="checkbox" name="remember" class="uk-checkbox" {{ old('remember') ? 'checked' : '' }}>
-                        Remember Me
+                <form method="POST" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+                    
+                    <label>
+                        Email
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            required>
                     </label>
-                </div>
-                <div class="uk-margin">
-                    <button type="submit" class="uk-button uk-button-primary uk-width-1-1">Login</button>
-                </div>
 
-                <hr>
+                    <label>
+                        Password
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            required>
+                    </label>
 
-                <div class="uk-text-center">
-                    <p>
-                       <a class="uk-link-muted" href="{{ url('#') }}">Forgot password?</a> 
-                    </p>
-                    <p>
-                        <a class="uk-link-muted" href="{{ url('register') }}">Create new account</a>
-                    </p>
-                </div>
-            </form>
+                    <input
+                        type="checkbox"
+                        name="remember"
+                        id="remember"
+                        {{ old('remember') ? 'checked' : '' }}>
+                    <label for="remember">Remember Me</label>
+
+                    <button type="submit" class="button primary expanded">LOG IN</button>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="medium-6 columns">
+                            <p>
+                               <a href="{{ url('#') }}">Forgot password?</a> 
+                            </p>
+                        </div>
+                        <div class="medium-6 columns">
+                            <p class="text-right">
+                                <a href="{{ route('register') }}">Create new account</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
 @endsection

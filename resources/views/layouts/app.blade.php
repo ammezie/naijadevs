@@ -40,78 +40,59 @@
     </script>
 </head>
 <body>
-    <div id="app">
-        {{-- <div class="uk-container">
-            <nav uk-navbar>
-                <div class="uk-navbar-left">
-                    <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
-                    <a href="{{ url('/') }}" class="uk-navbar-item uk-logo">
-                        <img src="{{ asset('images/logo.png') }}" alt="Naijadevs Logo">
-                    </a>
-
-                    <ul class="uk-navbar-nav">
-                        <li><a href="#" class="uk-active">About</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="uk-navbar-right">
-                    <ul class="uk-navbar-nav">
+    <nav class="top-bar">
+        <div class="top-bar-title">
+            <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+                <button class="menu-icon dark" type="button" data-toggle></button>
+            </span>
+            <a href="{{ url('/') }}" class="">
+                <img src="{{ asset('images/logo.png') }}" alt="Naijadevs Logo">
+            </a>
+        </div>
+        <div id="responsive-menu">
+            {{-- <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div> --}}
+            <div class="top-bar-right">
+                <ul class="menu">
                     @if (Auth::guest())
-                        <li><a href="{{ url('login') }}">Login</a></li>
-                        <li><a href="{{ url('register') }}">Register</a></li>
-                    @else
-                        <li class="uk-parent">
-                            <a href="#">Name</a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">Item</a></li>
-                                    <li class="uk-nav-divider"></li>
-                                    <li><a href="#">Logout</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    @endif
-                        <li>
-                            <div class="uk-navbar-item">
-                                <a href="#" class="uk-button uk-button-primary">Post a Job</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div> --}}
+                    <li><a href="{{ url('login') }}">LOGIN</a></li>
+                    <li><a href="{{ url('register') }}">SIGN UP</a></li>
+                @else
+                    <li><a href="#">Logout</a></li>
+                @endif
+                    <li>
+                        <div class="">
+                            <a href="#" class="button primary">Post a Job</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        <div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Site Title</li>
-      <li>
-        <a href="#">One</a>
-        <ul class="menu vertical">
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      <li><input type="search" placeholder="Search"></li>
-      <li><button type="button" class="button">Search</button></li>
-    </ul>
-  </div>
-</div>
-
-
-        @yield('content')
+    <div id="app">
+        @yield('content')        
     </div>
+
+    <footer class="footer" style="background-color: #cacaca">
+        <div class="row">
+            <div class="small-12 medium-12 large-12 text-center">
+                <small>
+                    &copy;2017 Naijadevs. All rights reserved.
+                </small>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $(document).foundation();
+    </script>
 </body>
 </html>
