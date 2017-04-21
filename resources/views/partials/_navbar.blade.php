@@ -1,30 +1,33 @@
-<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle="example-menu"></button>
-    <div class="title-bar-title">Menu</div>
-</div>
-<nav class="navbar">
-    <div class="row">
-        <div class="large-12 columns">        
-            <div class="top-bar-left">
-                {{-- <a href="{{ url('/') }}" class="">
-                    <img src="{{ asset('images/logo.png') }}" alt="Naijadevs Logo">
-                </a> --}}
+<nav class="ui stackable borderless menu">
+    <div class="ui container">
+        <div class="item">
+            <a href="{{ url('/') }}" class="">
+                <img src="{{ asset('images/logo.png') }}" alt="Naijadevs Logo">
+            </a>
+        </div>
+        <a class="item" href="{{ url('about') }}">
+            About
+        </a>
+        <a class="item" href="{{ url('pricing') }}">
+            Pricing
+        </a>
+    
+        <div class="right item">
+        @if (Auth::guest())
+            <a class="item" href="{{ route('login') }}">
+                Log In
+            </a>
+            <a class="item" href="{{ route('register') }}">
+                Sign Up
+            </a>
+        @else
+            <a class="item" href="{{ route('logout') }}">
+                Logout
+            </a>
+        @endif
+            <div class="item">
+                <a class="ui primary button" href="{{ url('post_job') }}">Post a Job</a>
             </div>
-            <div class="top-bar-right">
-                <ul class="menu">
-                @if (Auth::guest())
-                    <li><a href="{{ url('login') }}">LOGIN</a></li>
-                    <li><a href="{{ url('register') }}">SIGN UP</a></li>
-                @else
-                    <li><a href="#">Logout</a></li>
-                @endif
-                    <li>
-                        <div class="">
-                            <a href="#" class="button primary">Post a Job</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>    
         </div>
     </div>
 </nav>
