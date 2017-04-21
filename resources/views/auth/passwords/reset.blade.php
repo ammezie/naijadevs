@@ -1,77 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="login-page">
-        <div class="row align-center">
-            <div class="small-12 medium-4 large-4 columns">
-                <h3 class="text-center">Reset Password</h3>
+    <div class="ui stackable three column centered grid container">
+        <div class="column">
+            <h3 class="ui horizontal divider header">Reset Password</h3>
 
-                @if (session('status'))
-                    <div class="callout success">
-                        {{ session('status') }}
-                    </div>
-                @endif
+            @include('partials._form_errors')
 
-                <form method="POST" action="{{ route('password.request') }}">
-                    {{ csrf_field() }}
+            @if (session('status'))
+                <div class="ui success message">
+                    {{ session('status') }}
+                </div>
+            @endif
 
+            <form class="ui form" method="POST" action="{{ route('password.request') }}">
+                {{ csrf_field() }}
+
+                <input
+                    type="hidden"
+                    name="token"
+                    value="{{ $token }}">
+
+                <div class="required field{{ $errors->has('email') ? ' error' : '' }}">
+                    <label>Email</label>
                     <input
-                        type="hidden"
-                        name="token"
-                        value="{{ $token }}">
+                        type="email"
+                        name="email"
+                        value="{{ $email or old('email') }}"
+                        placeholder="Email"
+                        required>
+                </div>
 
-                    <label>
-                        Email <span class="required">*</span>
-                        <input
-                            type="email"
-                            name="email"
-                            class="{{ $errors->has('email') ? ' is-danger' : '' }}"
-                            value="{{ $email or old('email') }}"
-                            placeholder="Email"
-                            aria-describedby="emailHelpText"
-                            required>
-                    </label>
-                    @if ($errors->has('email'))
-                        <p class="help-text is-danger" id="emailHelpText">
-                            {{ $errors->first('email') }}
-                        </p>
-                    @endif
+                <div class="required field{{ $errors->has('password') ? ' error' : '' }}">
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        required>
+                </div>
 
-                    <label>
-                        Password <span class="required">*</span>
-                        <input
-                            type="password"
-                            name="password"
-                            class="{{ $errors->has('password') ? ' is-danger' : '' }}"
-                            placeholder="Password"
-                            aria-describedby="passwordHelpText"
-                            required>
-                    </label>
-                    @if ($errors->has('password'))
-                        <p class="help-text is-danger" id="passwordHelpText">
-                            {{ $errors->first('password') }}
-                        </p>
-                    @endif
+                <div class="required field{{ $errors->has('password_confirmation') ? ' error' : '' }}">
+                    <label>Confirm Password</label>
+                    <input
+                        type="password"
+                        name="password_confirmation"
+                        placeholder="Password"
+                        required>
+                </div>
 
-                    <label>
-                        Confirm Password <span class="required">*</span>
-                        <input
-                            type="password"
-                            name="password_confirmation"
-                            class="{{ $errors->has('password_confirmation') ? ' is-danger' : '' }}"
-                            placeholder="Password"
-                            aria-describedby="confirmPasswordHelpText"
-                            required>
-                    </label>
-                    @if ($errors->has('password_confirmation'))
-                        <p class="help-text is-danger" id="confirmPasswordHelpText">
-                            {{ $errors->first('password_confirmation') }}
-                        </p>
-                    @endif
-
-                    <button type="submit" class="button expanded primary">Reset Password</button>
-                </form>
-            </div>
+                <button type="submit" class="fluid ui primary button">Reset Password</button>
+            </form>
         </div>
-    </section>
+    </div>
 @endsection

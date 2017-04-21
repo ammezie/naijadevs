@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html class="no-js" lang="{{ config('app.locale') }}">
+<html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Naijadevs connects talented Nigerian developers and designers with companies who needs them.">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -40,59 +37,29 @@
     </script>
 </head>
 <body>
-    <nav class="top-bar">
-        <div class="top-bar-title">
-            <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                <button class="menu-icon dark" type="button" data-toggle></button>
-            </span>
-            <a href="{{ url('/') }}" class="">
-                <img src="{{ asset('images/logo.png') }}" alt="Naijadevs Logo">
-            </a>
-        </div>
-        <div id="responsive-menu">
-            {{-- <div class="top-bar-left">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div> --}}
-            <div class="top-bar-right">
-                <ul class="menu">
-                    @if (Auth::guest())
-                    <li><a href="{{ url('login') }}">LOGIN</a></li>
-                    <li><a href="{{ url('register') }}">SIGN UP</a></li>
-                @else
-                    <li><a href="#">Logout</a></li>
-                @endif
-                    <li>
-                        <div class="">
-                            <a href="#" class="button primary">Post a Job</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('partials._navbar')
 
     <div id="app">
         @yield('content')        
     </div>
 
-    <footer class="footer" style="background-color: #cacaca">
+    {{-- <footer class="footer" style="background-color: #cacaca">
         <div class="row">
-            <div class="small-12 medium-12 large-12 text-center">
+            <div class="small-12 medium-12 large-12 ttext-center">
                 <small>
                     &copy;2017 Naijadevs. All rights reserved.
                 </small>
             </div>
         </div>
-    </footer>
+    </footer> --}}
 
     <!-- Scripts -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="{{ asset('js/manifest.js') }}"></script>
+    <script src="{{ asset('js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        $(document).foundation();
-    </script>
 </body>
 </html>
