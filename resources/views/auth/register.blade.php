@@ -5,7 +5,7 @@
         <div class="column">
             <h3 class="ui horizontal divider header">Create New Account</h3>
             
-            @include('partials._form_errors')
+            @include('includes.form_errors')
 
             <form class="ui form" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}

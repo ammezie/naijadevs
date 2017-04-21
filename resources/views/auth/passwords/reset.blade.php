@@ -5,7 +5,7 @@
         <div class="column">
             <h3 class="ui horizontal divider header">Reset Password</h3>
 
-            @include('partials._form_errors')
+            @include('includes.form_errors')
 
             @if (session('status'))
                 <div class="ui success message">
