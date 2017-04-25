@@ -1,4 +1,4 @@
-<nav class="ui stackable borderless menu">
+<nav class="navbar ui stackable borderless menu">
     <div class="ui container">
         <div class="item">
             <a href="{{ url('/') }}" class="">
@@ -32,7 +32,7 @@
             </form>
         @endif
             <div class="item">
-                <a class="ui primary button" href="{{ url('post_job') }}">Post a Job</a>
+                <a class="ui primary button" href="{{ route('post_job') }}">Post a Job</a>
             </div>
         </div>
     </div>

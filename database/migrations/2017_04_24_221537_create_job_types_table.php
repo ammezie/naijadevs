@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdvertTypesTable extends Migration
+class CreateJobTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAdvertTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('advert_types', function (Blueprint $table) {
+        Schema::create('job_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateAdvertTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('advert_types');
+        Schema::dropIfExists('job_types');
     }
 }

@@ -1,3 +1,8 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.navbar.ui.menu {
+	margin: 0;
+	border-radius: 0;
+}
