@@ -19,8 +19,13 @@ class CreateJobsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('apply');
-            $table->unsignedInteger('type');
-            $table->string('location');
+            $table->string('apply_url')->nullable();
+            $table->string('apply_email')->nullable();
+            $table->string('apply_email_subject')->nullable();
+            $table->unsignedInteger('type_id');
+            $table->unsignedInteger('category_id');
+            $table->unsignedInteger('location_id')->nullable();
+            $table->boolean('is_remote')->default(0);
             $table->string('salary')->nullable();
             $table->timestamps();
 

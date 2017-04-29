@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Reset Password')
+
 @section('content')
     <div class="ui stackable three column centered grid container">
         <div class="column">

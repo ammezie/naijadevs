@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Naijadevs connects talented Nigerian developers and designers with companies who needs them.">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Naijadevs - @yield('title')</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -37,21 +37,22 @@
     </script>
 </head>
 <body>
-    @include('partials._navbar')
-
     <div id="app">
-        @yield('content')        
-    </div>
-
-    {{-- <footer class="footer" style="background-color: #cacaca">
-        <div class="row">
-            <div class="small-12 medium-12 large-12 ttext-center">
-                <small>
-                    &copy;2017 Naijadevs. All rights reserved.
-                </small>
-            </div>
+        @include('partials._navbar')
+        <div id="main" style="margin-top: 50px; margin-bottom: 50px;">
+            @yield('content')
         </div>
-    </footer> --}}
+
+        {{-- <footer class="footer" style="background-color: #cacaca; padding-top: 20px; padding-bottom: 10px;">
+            <div class="ui container">
+                <div class="ui center aligned grid">
+                    <small>
+                        &copy;2017 Naijadevs. All rights reserved.
+                    </small>
+                </div>
+            </div>
+        </footer> --}}
+    </div>
 
     <!-- Scripts -->
     <script
@@ -61,5 +62,8 @@
     <script src="{{ asset('js/manifest.js') }}"></script>
     <script src="{{ asset('js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $('.selection.dropdown, select.dropdown').dropdown();
+    </script>
 </body>
 </html>

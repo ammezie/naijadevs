@@ -22,4 +22,15 @@ class Job extends Model
     {
         return '/jobs/' . $this->id;
     }
+
+    /**
+     * Persist job to database
+     *
+     * @param array $attributes
+     * @return Job
+     */
+    public static function createJob($attributes)
+    {
+        return static::create($attributes);
+    }
 }

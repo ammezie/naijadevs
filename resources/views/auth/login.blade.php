@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Log In')
+
 @section('content')
     <div class="ui stackable three column centered grid container">
         <div class="column">
@@ -28,7 +30,7 @@
                     <div class="column">
                         <div class="field">
                             <div class="ui checkbox">
-                                <input type="checkbox" id="remember" tabindex="0" {{ old('remember') ? 'checked' : '' }}>
+                                <input type="checkbox" id="remember" name="remember" tabindex="0" {{ old('remember') ? 'checked' : '' }}>
                                 <label for="remember">Keep me logged in</label>
                             </div>
                         </div>

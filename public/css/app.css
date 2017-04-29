@@ -2131,18 +2131,6 @@ input::selection {
 /*******************************
         Global Overrides
 *******************************/
-.hero {
-  background-color: black;
-  background-image: url('https://unsplash.it/1500?random');
-  background-size: cover;
-  background-position: center;
-  width: 100wh;
-  height: 50vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: white;
-}
 /*******************************
          Site Overrides
 *******************************/

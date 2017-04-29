@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Create New Account')
+
 @section('content')
     <div class="ui stackable two column centered grid container">
         <div class="column">
