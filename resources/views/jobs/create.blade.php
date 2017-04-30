@@ -80,7 +80,7 @@
                     <div class="required field{{ $errors->has('type') ? ' error' : '' }}">
                         <label>Type</label>
                         <select
-                            name="type"
+                            name="type_id"
                             class="ui dropdown"
                             required>
                             <option value="">Select Job Type</option>
@@ -99,7 +99,7 @@
                     <div class="required field{{ $errors->has('location') ? ' error' : '' }}" :class="{ disabled: is_remote }">
                         <label>Location</label>
                         <select
-                            name="location"
+                            name="location_id"
                             class="ui search dropdown"
                             required>
                             <option value="">Select Job Location</option>
@@ -135,7 +135,7 @@
                     <div class="required field{{ $errors->has('category') ? ' error' : '' }}">
                         <label>Category</label>
                         <select
-                            name="category"
+                            name="category_id"
                             class="ui search dropdown"
                             required>
                             <option value="">Select Category</option>

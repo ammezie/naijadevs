@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Naijadevs connects talented Nigerian developers and designers with companies who needs them.">
 
-    <title>Naijadevs - @yield('title')</title>
+    <title>@yield('title') - Naijadevs</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

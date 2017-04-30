@@ -12,7 +12,7 @@ class JobsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->only('store');
     }
 
     public function index()
@@ -42,7 +42,7 @@ class JobsController extends Controller
      * @param  Request $request
      * @return [type]           [description]
      */
-    public function store(JobRequest $request)
+    public function store(\Illuminate\Http\Request $request)
     {
         $attributes = [
             'user_id' => auth()->id(),
@@ -52,9 +52,9 @@ class JobsController extends Controller
             'apply_url' => $request->apply_url,
             'apply_email' => $request->apply_email,
             'apply_email_subject' => $request->apply_email_subject,
-            'type_id' => $request->type,
-            'category_id' => $request->category,
-            'location_id' => $request->is_remote ? null : $request->location,
+            'type_id' => $request->type_id,
+            'category_id' => $request->category_id,
+            'location_id' => $request->is_remote ? null : $request->location_id,
             'salary' => $request->salary,
             'is_remote' => $request->has('is_remote') ?? 0,
         ];
@@ -72,6 +72,6 @@ class JobsController extends Controller
      */
     public function show(Job $job)
     {
-        return $job;
+        return view('jobs.show', compact('job'));
     }
 }

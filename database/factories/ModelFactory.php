@@ -25,16 +25,29 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Models\Job::class, function (Faker\Generator $faker) {
     return [
-        'user_id' => factory('App\Models\User')->create()->id,
+        'user_id' => factory(App\Models\User::class)->create()->id,
         'title' => $faker->sentence,
         'description' => $faker->paragraph,
         'apply' => $faker->unique()->safeEmail,
-        'type' => factory('App\Models\JobType')->create()->id,
-        'location' => $faker->state,
+        'type_id' => factory(App\Models\JobType::class)->create()->id,
+        'location_id' => factory(App\Models\Location::class)->create()->id,
+        'category_id' => factory(App\Models\Category::class)->create()->id,
     ];
 });
 
 $factory->define(App\Models\JobType::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+    ];
+});
+
+$factory->define(App\Models\Location::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+    ];
+});
+
+$factory->define(App\Models\Category::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
     ];
