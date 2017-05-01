@@ -83,6 +83,9 @@ class JobsController extends Controller
      */
     public function edit(Job $job)
     {
+        // Can the currently authenticated user edit this job
+        $this->authorize('update', $job);
+
         return view('jobs.edit', [
             'job' => $job,
             'jobTypes' => JobType::all(),
@@ -100,6 +103,7 @@ class JobsController extends Controller
      */
     public function update(JobRequest $request, Job $job)
     {
+        // Can the currently authenticated user edit this job
         $this->authorize('update', $job);
         
         $attributes = [

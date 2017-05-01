@@ -45,6 +45,15 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if (app()->environment() === 'testing') throw $exception;
+
+        if ($exception instanceof \Illuminate\Auth\Access\AuthorizationException) {
+            if ($request->expectsJson()) {
+                return response()->json(['error' => 'Unauthorized.'], 403);
+            }
+
+            return redirect()->route('home');
+        }
+
         return parent::render($request, $exception);
     }
 
