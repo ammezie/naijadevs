@@ -24,6 +24,16 @@ class Job extends Model
     }
 
     /**
+     * Get the user that created the job
+     *
+     * @return Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function creator()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
      * Persist job to database
      *
      * @param array $attributes
@@ -32,5 +42,16 @@ class Job extends Model
     public static function createJob($attributes)
     {
         return static::create($attributes);
+    }
+
+    /**
+     * Persist job to database
+     *
+     * @param array $attributes
+     * @return Job
+     */
+    public function updateJob($attributes)
+    {
+        return $this->update($attributes);
     }
 }

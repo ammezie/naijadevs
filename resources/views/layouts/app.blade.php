@@ -65,5 +65,6 @@
     <script>
         $('.selection.dropdown, select.dropdown').dropdown();
     </script>
+    @stack('scripts')
 </body>
 </html>

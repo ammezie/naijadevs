@@ -38,37 +38,59 @@ class JobTest extends TestCase
     }
 
     /** @test */
-    // public function an_authenticated_user_can_edit_an_already_created_job()
-    // {
-    //     // Given
-    //     $this->actingAs($user = factory(User::class)->create());
-    //     $job = factory(Job::class)->create([
-    //         'user_id' => $user->id
-    //     ]);
-    //     $UserJob = $user->jobs;
+    public function an_authenticated_user_can_edit_job()
+    {
+        $this->actingAs(factory(User::class)->create());
 
-    //     // When
-    //     $this->put('/jobs/' . $job->id . '/edit', [
-    //         'title' => 'New Title',
-    //         'description' => 'New job description'
-    //     ]);
+        $job = factory(Job::class)->create([
+            'user_id' => auth()->id()
+        ]);
 
-    //     // Then
-    //     $this->get($job->path())
-    //         ->assertSee($job->title)
-    //         ->assertSee($job->description);
-    // }
+        $this->patch($job->path(), [
+            'title' => 'New Title',
+            'description' => 'New job description',
+            'user_id' => auth()->id(),
+            'apply' => $job->apply,
+            'type_id' => $job->type_id,
+            'location_id' => $job->location_id,
+            'category_id' => $job->category_id,
+            'salary' => 120000,
+        ]);
+
+        $this->assertDatabaseHas('jobs', [
+            'title' => 'New Title',
+            'description' => 'New job description',
+        ]);
+    }
+
+    /** @test */
+    public function an_authenticated_user_can_edit_only_own_job()
+    {
+        $this->expectException('Illuminate\Auth\Access\AuthorizationException');
+
+        $this->actingAs(factory(User::class)->create());
+        
+        $job = factory(Job::class)->create();
+
+        $this->patch($job->path(), [
+            'title' => 'New Title',
+            'description' => 'New job description',
+            'user_id' => auth()->id(),
+            'apply' => $job->apply,
+            'type_id' => $job->type_id,
+            'location_id' => $job->location_id,
+            'category_id' => $job->category_id,
+            'salary' => 120000,
+        ]);
+    }
 
     /** @test */
     public function users_can_view_a_job()
     {
-        // Given
         $job = factory(Job::class)->create();
 
-        // When
         $response = $this->get($job->path());
 
-        // Then
         $response->assertSee($job->title)
             ->assertSee($job->description);
     }

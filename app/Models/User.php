@@ -31,4 +31,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the jobs that have been created by the user
+     *
+     * @return Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }

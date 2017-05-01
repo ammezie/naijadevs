@@ -27,12 +27,12 @@ class JobRequest extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'apply' => 'required',
-            'type' => 'required',
-            'location' => 'required',
-            'category' => 'required',
-            'apply_url' => 'sometimes|required|url',
-            'apply_email' => 'sometimes|required|email',
-            'salary' => 'numeric',
+            'type_id' => 'required',
+            'location_id' => 'nullable',
+            'category_id' => 'required',
+            'apply_url' => 'nullable|url',
+            'apply_email' => 'nullable|email',
+            'salary' => 'nullable|numeric',
         ];
     }
 
@@ -49,9 +49,9 @@ class JobRequest extends FormRequest
             'apply.required' => 'Specify how to apply for job',
             'apply_url.required' => 'Specify the URL with which to apply for job',
             'apply_email.required' => 'Specify the Email address with which to apply for job',
-            'type.required' => 'Specify job type',
-            'location.required' => 'Specify location if job is not remote',
-            'category.required' => 'Specify job category',
+            'type_id.required' => 'Specify job type',
+            'location_id.required' => 'Specify location if job is not remote',
+            'category_id.required' => 'Specify job category',
             'salary.numeric' => 'Salary must be a numeric value',
         ];
     }

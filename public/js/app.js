@@ -1,9 +1,8 @@
 webpackJsonp([1],{
 
 /***/ 11:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -19,7 +18,7 @@ __webpack_require__(30);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('example', require('./components/Example.vue'));
+// Vue.component('apply', require('./components/Apply.vue'));
 
 var app = new Vue({
   el: '#app',
@@ -83,7 +82,7 @@ window.axios.defaults.headers.common = {
 
 /***/ }),
 
-/***/ 33:
+/***/ 32:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
@@ -92,4 +91,4 @@ module.exports = __webpack_require__(12);
 
 /***/ })
 
-},[33]);
+},[32]);
