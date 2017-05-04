@@ -2,6 +2,10 @@
 
 @section('title', 'Create A Job')
 
+@push('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+@endpush
+
 @section('content')
     <div class="ui stackable two column centered grid container">
         <div class="column">
@@ -29,6 +33,7 @@
                     <label>Description</label>
                     <textarea
                         name="description"
+                        id="description"
                         rows="10"
                         placeholder="Job Description"
                         required>{{ old('description') }}</textarea>
@@ -167,3 +172,14 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script>
+        var simplemde = new SimpleMDE({
+            element: document.getElementById('description'),
+            forceSync: true,
+            status: false,
+        });
+    </script>
+@endpush
