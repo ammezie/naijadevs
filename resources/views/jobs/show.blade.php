@@ -7,6 +7,6 @@
 @section('content')
     <div class="ui container">
         <h2>{{ $job->title }}</h2>
-        <p>{{ $job->description }}</p>
+        @markdown($job->description)
     </div>
 @endsection
