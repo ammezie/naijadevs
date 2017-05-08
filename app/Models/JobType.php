@@ -12,4 +12,14 @@ class JobType extends Model
      * @var array
      */
     protected $guarded = ['id'];
+
+    /**
+     * Get the jobs for the job type
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }

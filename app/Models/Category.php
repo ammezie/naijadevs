@@ -6,5 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    //
+    /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = ['id'];
+
+    /**
+     * Get the jobs for the job category
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }

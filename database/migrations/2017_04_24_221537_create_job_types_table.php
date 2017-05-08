@@ -16,6 +16,7 @@ class CreateJobTypesTable extends Migration
         Schema::create('job_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('color');
             $table->timestamps();
         });
     }

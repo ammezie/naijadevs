@@ -26,11 +26,41 @@ class Job extends Model
     /**
      * Get the user that created the job
      *
-     * @return Illuminate\Database\Eloquent\Relations\Relation
+     * @return \Illuminate\Database\Eloquent\Relations\Relation
      */
     public function creator()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+     * Get the type of the job
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function type()
+    {
+        return $this->belongsTo(JobType::class);
+    }
+
+    /**
+     * Get the category of the job
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    /**
+     * Get the location of the job
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
     }
 
     /**

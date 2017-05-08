@@ -38,6 +38,7 @@ $factory->define(App\Models\Job::class, function (Faker\Generator $faker) {
 $factory->define(App\Models\JobType::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
+        'color' => 'green',
     ];
 });
 
@@ -50,5 +51,6 @@ $factory->define(App\Models\Location::class, function (Faker\Generator $faker) {
 $factory->define(App\Models\Category::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
+        'color' => 'red',
     ];
 });
