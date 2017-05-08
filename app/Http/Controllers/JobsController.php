@@ -17,7 +17,7 @@ class JobsController extends Controller
 
     public function index()
     {
-        $jobs = Job::with('creator', 'type', 'category', 'location')->get();
+        $jobs = Job::with('creator', 'type', 'category', 'location')->latest()->paginate(25);
         $jobTypes = JobType::all();
         $categories = Category::all();
 

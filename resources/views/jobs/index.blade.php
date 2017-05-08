@@ -3,66 +3,100 @@
 @section('title', 'Connects talented Nigerian developers and designers with companies who needs them')
 
 @section('content')
-    <div class="ui stackable internally celled grid container">
-        <div class="three wide column">
-            <div class="filter">
-                <h3 class="ui dividing header">Filters</h3>
+    <div class="ui stackable grid container">
+        <div class="four wide column">
+            <h3 class="ui top attached header">
+                <i class="red fitted filter icon"></i>
+                <div class="content">
+                    Filters
+                </div>
+            </h3>
 
+            <div class="ui attached padded segment">
                 <h4 class="ui header">Type</h4>
-                @foreach ($jobTypes as $type)
-                    <input type="checkbox" name="type"> {{ $type->name }}
-                @endforeach
-
-                <h4 class="ui header">Category</h4>
-                @foreach ($categories as $category)
-                    <input type="checkbox" name="category"> {{ $category->name }}
-                @endforeach
-            </div>
-        </div>
-
-        <div class="thirteen wide column">
-            @if ($jobs->isEmpty())
-                <p>Sorry!!! There are currently no jobs posted.</p>
-            @else
-                <div class="ui divided relaxed link items">
-                    @foreach ($jobs as $job)
+                <div class="ui list">
+                    @foreach ($jobTypes as $type)
                         <div class="item">
-                            <div class="ui tiny image">
-                                <img src="{{ $job->creator->company_logo }}">
-                            </div>
-                            <div class="content">
-                                <div class="header">
-                                    {{ $job->title }}
-                                </div>
-                                <div class="meta">
-                                    <span class="type">
-                                        {{ $job->type->name }}
-                                    </span>
-                                    <span class="category">
-                                        {{ $job->category->name }}
-                                    </span>
-                                    <span class="location">
-                                        <i class="red marker icon"></i>
-                                        {{ $job->is_remote ? 'Remote' : $job->location->name }}
-                                    </span>
-                                    @if (! is_null($job->salary))
-                                        <span class="salary">
-                                            <i class="red money icon"></i>
-                                            ₦{{ ($job->salary/1000) }}k
-                                        </span>
-                                    @endif
-                                </div>
-                                <div class="description">
-                                    
-                                </div>
-                                <div class="extra">
-                                    Additional details
-                                </div>
+                            <div class="ui checkbox">
+                                <input id="type" type="checkbox" name="type">
+                                <label for="type">{{ $type->name }}</label>
                             </div>
                         </div>
                     @endforeach
                 </div>
-            @endif
+
+                <h4 class="ui header">Category</h4>
+                <div class="ui list">
+                    @foreach ($categories as $category)
+                        <div class="item">
+                            <div class="ui checkbox">
+                                <input id="category" type="checkbox" name="category">
+                                <label for="category">{{ $category->name }}</label>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+        <div class="twelve wide column">
+            <div class="ui raised padded segment">
+                @if ($jobs->isEmpty())
+                    <p>Sorry!!! There are currently no jobs posted.</p>
+                @else
+                    <div class="ui divided relaxed items">
+                        @foreach ($jobs as $job)
+                            <div class="item">
+                                <div class="ui tiny image">
+                                    <img src="{{ $job->creator->company_logo }}">
+                                </div>
+                                <div class="content">
+                                    <a class="header" href="{{ $job->path() }}">
+                                        {{ $job->title }}
+                                    </a>
+                                    <div class="meta">
+                                        <span class="company">
+                                            {{ $job->creator->company_name }}
+                                        </span>
+                                        <span class="location">
+                                            <i class="red {{ $job->is_remote ? 'world' : 'marker' }} icon"></i>
+                                            {{ $job->is_remote ? 'Remote' : $job->location->name }}
+                                        </span>
+                                        <span class="ui right floated category">
+                                            <div class="ui basic {{ $job->category->color }} label">
+                                                {{ $job->category->name }}
+                                            </div>
+                                        </span>
+                                        <span class="ui right floated type">
+                                            <div class="ui basic {{ $job->type->color }} label">
+                                                {{ $job->type->name }}
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="extra">
+                                        <span class="date">
+                                            Posted: {{ $job->created_at->diffForHumans() }}
+                                        </span>
+                                        {{-- <span class="salary">
+                                            @if (! is_null($job->salary))
+                                            <div class="item">
+                                                ₦{{ ($job->salary/1000) }}k
+                                            </div>
+                                            @endif
+                                        </span> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+
+            <div class="ui center aligned one column grid">
+                <div class="column wide">
+                    {{ $jobs->links() }}
+                </div>
+            </div>
         </div>
     </div>
 @endsection
