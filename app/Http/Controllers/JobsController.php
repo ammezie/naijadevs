@@ -17,9 +17,11 @@ class JobsController extends Controller
 
     public function index()
     {
-        $jobs = Job::all();
+        $jobs = Job::with('creator', 'type', 'category', 'location')->get();
+        $jobTypes = JobType::all();
+        $categories = Category::all();
 
-        return view('jobs.index', compact('jobs'));
+        return view('jobs.index', compact('jobs', 'jobTypes', 'categories'));
     }
 
     /**
@@ -29,11 +31,11 @@ class JobsController extends Controller
      */
     public function create()
     {
-        return view('jobs.create', [
-            'jobTypes' => JobType::all(),
-            'locations' => Location::all(),
-            'categories' => Category::all(),
-        ]);
+        $jobTypes = JobType::all();
+        $locations = Location::all();
+        $categories = Category::all();
+
+        return view('jobs.create', compact('jobTypes', 'locations', 'categories'));
     }
 
     /**
@@ -72,8 +74,6 @@ class JobsController extends Controller
      */
     public function show(Job $job)
     {
-        // $job = Job::with('type')->findOrFail($job);
-        // dd($job);
         return view('jobs.show', compact('job'));
     }
 
@@ -88,12 +88,11 @@ class JobsController extends Controller
         // Can the currently authenticated user edit this job
         $this->authorize('update', $job);
 
-        return view('jobs.edit', [
-            'job' => $job,
-            'jobTypes' => JobType::all(),
-            'locations' => Location::all(),
-            'categories' => Category::all(),
-        ]);
+        $jobTypes = JobType::all();
+        $locations = Location::all();
+        $categories = Category::all();
+
+        return view('jobs.edit', compact('job', 'jobTypes', 'locations', 'categories'));
     }
 
     /**
