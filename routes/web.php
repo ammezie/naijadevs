@@ -17,6 +17,6 @@ Route::get('/', 'JobsController@index')->name('home');
 Route::get('/jobs', 'JobsController@index');
 Route::get('/post-job', 'JobsController@create')->name('post_job');
 Route::post('/jobs', 'JobsController@store');
-Route::get('/jobs/{job}', 'JobsController@show');
 Route::get('/jobs/{job}/edit', 'JobsController@edit');
 Route::patch('/jobs/{job}', 'JobsController@update');
+Route::get('/jobs/{job}/{title?}', 'JobsController@show');

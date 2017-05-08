@@ -46,7 +46,7 @@ class JobTest extends TestCase
             'user_id' => auth()->id()
         ]);
 
-        $this->patch($job->path(), [
+        $this->patch('/jobs/' . $job->id, [
             'title' => 'New Title',
             'description' => 'New job description',
             'user_id' => auth()->id(),
@@ -72,7 +72,7 @@ class JobTest extends TestCase
         
         $job = factory(Job::class)->create();
 
-        $this->patch($job->path(), [
+        $this->patch('/jobs/' . $job->id, [
             'title' => 'New Title',
             'description' => 'New job description',
             'user_id' => auth()->id(),

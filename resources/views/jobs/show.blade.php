@@ -10,9 +10,9 @@
             <div class="ui divided grid">
                 <div class="three wide column">
                     @if (! is_null($job->creator->company_logo))
-                    <a class="ui middle aligned image" href="{{ url('#') }}">
+                    <div class="ui middle aligned image">
                         <img src="{{ asset($job->creator->company_logo) }}">
-                    </a>
+                    </div>
                     @endif
                 </div>
                 <div class="thirteen wide column">
@@ -38,7 +38,7 @@
                         </div>
                         @endif
                         <div class="item">
-                            <i class="red marker icon"></i>
+                            <i class="red {{ $job->is_remote ? 'world' : 'marker' }} icon"></i>
                             {{ $job->is_remote ? 'Remote' : $job->location->name }}
                         </div>
                         <div class="item">
@@ -111,7 +111,7 @@
                 <div class="extra content">
                     <div class="ui two buttons">
                         <a
-                            href="{{ url($job->creator->company_website) }}"
+                            href="{{ $job->creator->company_website }}"
                             class="ui basic grey button" target="_blank">
                             View Company
                         </a>

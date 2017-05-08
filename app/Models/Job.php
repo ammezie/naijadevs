@@ -20,7 +20,7 @@ class Job extends Model
      */
     public function path()
     {
-        return '/jobs/' . $this->id;
+        return "/jobs/$this->id/" . str_slug($this->title);
     }
 
     /**
