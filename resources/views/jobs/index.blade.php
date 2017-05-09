@@ -3,7 +3,7 @@
 @section('title', 'Connects talented Nigerian developers and designers with companies who needs them')
 
 @section('content')
-    <div class="ui stackable grid container">
+    <div class="ui mobile reversed stackable grid container">
         <div class="four wide column">
             <h3 class="ui top attached header">
                 <i class="red fitted filter icon"></i>

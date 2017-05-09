@@ -34,15 +34,7 @@
             @yield('content')
         </div>
 
-        {{-- <footer class="footer" style="background-color: #cacaca; padding-top: 20px; padding-bottom: 10px;">
-            <div class="ui container">
-                <div class="ui center aligned grid">
-                    <small>
-                        &copy;2017 Naijadevs. All rights reserved.
-                    </small>
-                </div>
-            </div>
-        </footer> --}}
+        @include('partials._footer')
     </div>
 
     <!-- Scripts -->
