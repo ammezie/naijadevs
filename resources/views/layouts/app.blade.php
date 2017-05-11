@@ -34,6 +34,8 @@
             @yield('content')
         </div>
 
+        <div class="ui hidden divider"></div>
+
         @include('partials._footer')
     </div>
 
