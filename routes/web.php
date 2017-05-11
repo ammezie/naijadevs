@@ -20,3 +20,5 @@ Route::post('/jobs', 'JobsController@store');
 Route::get('/jobs/{job}/edit', 'JobsController@edit');
 Route::patch('/jobs/{job}', 'JobsController@update');
 Route::get('/jobs/{job}/{title?}', 'JobsController@show');
+
+Route::post('/job_notify', 'JobNotificationsController@subscribe')->name('job_notify');

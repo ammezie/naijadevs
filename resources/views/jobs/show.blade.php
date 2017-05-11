@@ -129,6 +129,10 @@
                         Tweet this job
                     </a>
                     <a href="" class="item">
+                        <i class="linkedin icon"></i>
+                        Share on LinkedIn
+                    </a>
+                    <a href="" class="item">
                         <i class="facebook icon"></i>
                         Share on Facebook
                     </a>

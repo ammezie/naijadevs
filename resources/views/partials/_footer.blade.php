@@ -6,9 +6,10 @@
                 <p>
                     Want to know when new jobs are posted? You will be notified about new jobs right in your inbox. Don't worry, we hate spam as much as you do.
                 </p>
-                <form action="{{ url('#') }}" method="POST">
+                <form action="{{ route('job_notify') }}" method="POST">
+                    {{ csrf_field() }}
                     <div class="ui fluid action input">
-                        <input type="email" name="email" placeholder="Enter your email address">
+                        <input type="email" name="email" placeholder="Enter your email address" required>
                         <button class="ui primary button">Subscribe</button>
                     </div>
                 </form>
@@ -29,7 +30,7 @@
         <div class="six wide column">
             <div class="ui small horizontal list">
                 <div class="item">
-                    © Naijadevs 2017. All rights reserved.
+                    © Naijadevs 2017. All Rights Reserved.
                 </div>
                 <a class="item" href="#">About</a>
                 <a class="item" href="#">Pricing</a>

@@ -3,8 +3,8 @@
 @section('title', 'Connects talented Nigerian developers and designers with companies who needs them')
 
 @section('content')
-    <div class="ui mobile reversed stackable grid container">
-        <div class="four wide column">
+    <div class="ui grid container">
+        <div class="four wide column large screen only">
             <h3 class="ui top attached header">
                 <i class="red fitted filter icon"></i>
                 <div class="content">
@@ -39,8 +39,8 @@
             </div>
         </div>
 
-        <div class="twelve wide column">
-            <div class="ui raised padded segment">
+        <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
+            <div class="ui padded segment">
                 @if ($jobs->isEmpty())
                     <p>Sorry!!! There are currently no jobs posted.</p>
                 @else
