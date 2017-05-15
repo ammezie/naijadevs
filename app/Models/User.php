@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Job::class);
     }
+
+    public static function getUserByID($userID)
+    {
+        return static::findOrFail($userID);
+    }
 }

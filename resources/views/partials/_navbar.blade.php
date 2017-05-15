@@ -33,12 +33,8 @@
                 My Account
                 <i class="dropdown icon"></i>
                 <div class="menu">
-                    <a class="item" href="{{ url('/my-jobs') }}">
-                        Jobs
-                    </a>
-                    <a class="item" href="{{ url('/settings') }}">
-                        Settings
-                    </a>
+                    <a class="item" href="{{ url('/my-jobs') }}">Jobs</a>
+                    <a class="item" href="{{ url('/settings/account') }}">Settings</a>
                     <div class="divider"></div>
                     <a class="item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
