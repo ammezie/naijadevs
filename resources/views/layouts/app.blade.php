@@ -48,7 +48,7 @@
     <script src="{{ asset('js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
-        $('.selection.dropdown, select.dropdown').dropdown();
+        $('.ui.dropdown, .selection.dropdown, select.dropdown').dropdown();
     </script>
     @stack('scripts')
 </body>

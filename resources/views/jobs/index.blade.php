@@ -40,7 +40,7 @@
         </div>
 
         <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
-            <div class="ui padded segment">
+            {{-- <div class="ui padded segment"> --}}
                 @if ($jobs->isEmpty())
                     <p>Sorry!!! There are currently no jobs posted.</p>
                 @else
@@ -77,20 +77,13 @@
                                         <span class="date">
                                             Posted: {{ $job->created_at->diffForHumans() }}
                                         </span>
-                                        {{-- <span class="salary">
-                                            @if (! is_null($job->salary))
-                                            <div class="item">
-                                                ₦{{ ($job->salary/1000) }}k
-                                            </div>
-                                            @endif
-                                        </span> --}}
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 @endif
-            </div>
+            {{-- </div> --}}
 
             <div class="ui center aligned one column grid">
                 <div class="column wide">

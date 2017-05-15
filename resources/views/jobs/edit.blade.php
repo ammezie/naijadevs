@@ -25,7 +25,7 @@
                     <input
                         type="text"
                         name="title"
-                        value="{{ old('title') ? old('title') : $job->title }}"
+                        value="{{ old('title', $job->title) }}"
                         placeholder="Job Title"
                         required>
                 </div>
@@ -37,7 +37,7 @@
                         id="description"
                         rows="10"
                         placeholder="Job Description"
-                        required>{{ old('description') ? old('description') : $job->description }}</textarea>
+                        required>{{ old('description', $job->description) }}</textarea>
                 </div>
 
                 <div class="required field{{ $errors->has('apply') ? ' error' : '' }}">
@@ -57,7 +57,7 @@
                     <input
                         type="url"
                         name="apply_url"
-                        value="{{ old('apply_url') ? old('apply_url') : $job->apply_url }}"
+                        value="{{ old('apply_url', $job->apply_url) }}"
                         placeholder="http://">
                 </div>
 
@@ -67,7 +67,7 @@
                         <input
                             type="email"
                             name="apply_email"
-                            value="{{ old('apply_email') ? old('apply_email') : $job->apply_email }}"
+                            value="{{ old('apply_email', $job->apply_email) }}"
                             placeholder="Email Address">
                     </div>
                     <div class="field">
@@ -75,7 +75,7 @@
                         <input
                             type="text"
                             name="apply_email_subject"
-                            value="{{ old('apply_email_subject') ? old('apply_email_subject') : $job->apply_email_subject }}"
+                            value="{{ old('apply_email_subject', $job->apply_email_subject) }}"
                             placeholder="Email Subject">
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                         <input
                             type="text"
                             name="salary"
-                            value="{{ old('salary') ? old('salary') : $job->salary }}"
+                            value="{{ old('salary', $job->salary) }}"
                             placeholder="80,000 ~ 120,000 or fixed amount">
                     </div>
                 </div>

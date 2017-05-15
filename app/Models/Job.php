@@ -84,4 +84,9 @@ class Job extends Model
     {
         return $this->update($attributes);
     }
+
+    public static function userJobs($user)
+    {
+        return static::where('user_id', $user)->get();
+    }
 }
