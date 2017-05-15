@@ -3,7 +3,7 @@
 @section('title', 'Profile Settings')
 
 @section('content')
-    <div class="ui mobile reversed grid container">
+    <div class="ui stackable grid container">
         <div class="four wide column">
             @include('users.partials._user_nav')
         </div>
