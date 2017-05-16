@@ -85,8 +85,24 @@ class Job extends Model
         return $this->update($attributes);
     }
 
+    /**
+     * Get jobs created by a specified user
+     *
+     * @param integer $user
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
     public static function userJobs($user)
     {
         return static::where('user_id', $user)->latest();
+    }
+
+    /**
+     * Get open jobs
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public static function getOpenJobs()
+    {
+        return static::where('is_closed', 0)->with('creator', 'type', 'category', 'location')->latest();
     }
 }

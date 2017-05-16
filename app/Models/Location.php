@@ -22,4 +22,14 @@ class Location extends Model
     {
         return $this->hasMany(Job::class);
     }
+
+    /**
+     * Get all locations
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public static function getAll()
+    {
+        return static::all();
+    }
 }

@@ -22,4 +22,14 @@ class JobType extends Model
     {
         return $this->hasMany(Job::class);
     }
+
+    /**
+     * Get all job types
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public static function getAll()
+    {
+        return static::all();
+    }
 }

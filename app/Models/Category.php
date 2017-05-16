@@ -22,4 +22,14 @@ class Category extends Model
     {
         return $this->hasMany(Job::class);
     }
+
+    /**
+     * Get all categories
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public static function getAll()
+    {
+        return static::all();
+    }
 }

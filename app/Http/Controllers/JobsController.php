@@ -17,9 +17,9 @@ class JobsController extends Controller
 
     public function index()
     {
-        $jobs = Job::with('creator', 'type', 'category', 'location')->latest()->paginate(25);
-        $jobTypes = JobType::all();
-        $categories = Category::all();
+        $jobs = Job::getOpenJobs()->paginate(25);
+        $jobTypes = JobType::getAll();
+        $categories = Category::getAll();
 
         return view('jobs.index', compact('jobs', 'jobTypes', 'categories'));
     }
@@ -31,9 +31,9 @@ class JobsController extends Controller
      */
     public function create()
     {
-        $jobTypes = JobType::all();
-        $locations = Location::all();
-        $categories = Category::all();
+        $jobTypes = JobType::getAll();
+        $locations = Location::getAll();
+        $categories = Category::getAll();
 
         return view('jobs.create', compact('jobTypes', 'locations', 'categories'));
     }
@@ -88,9 +88,9 @@ class JobsController extends Controller
         // Can the currently authenticated user edit this job
         $this->authorize('update', $job);
 
-        $jobTypes = JobType::all();
-        $locations = Location::all();
-        $categories = Category::all();
+        $jobTypes = JobType::getAll();
+        $locations = Location::getAll();
+        $categories = Category::getAll();
 
         return view('jobs.edit', compact('job', 'jobTypes', 'locations', 'categories'));
     }
