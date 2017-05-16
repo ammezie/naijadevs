@@ -20,6 +20,8 @@ class User extends Authenticatable
         'password',
         'company_name',
         'company_website',
+        'company_location',
+        'company_about',
         'company_logo',
     ];
 
@@ -40,6 +42,16 @@ class User extends Authenticatable
     public function jobs()
     {
         return $this->hasMany(Job::class);
+    }
+
+    /**
+     * A user belongs to a location
+     *
+     * @return Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function location()
+    {
+        return $this->belongsTo(Location::class, 'company_location');
     }
 
     public static function getUserByID($userID)

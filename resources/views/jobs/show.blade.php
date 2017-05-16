@@ -99,7 +99,7 @@
                     <div class="meta">
                        <i class="marker icon"></i>
                        <span class="location">
-                           {{ $job->creator->company_location }}
+                           {{ $job->creator->location->name }}
                        </span>
                     </div>
                     <div class="description">

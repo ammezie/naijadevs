@@ -24,6 +24,16 @@ class Location extends Model
     }
 
     /**
+     * A location can have many users
+     *
+     * @return Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    /**
      * Get all locations
      *
      * @return \Illuminate\Database\Eloquent\Collection
