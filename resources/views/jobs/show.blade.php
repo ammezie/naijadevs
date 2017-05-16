@@ -97,10 +97,12 @@
                         {{ $job->creator->company_name }}
                     </div>
                     <div class="meta">
-                       <i class="marker icon"></i>
-                       <span class="location">
-                           {{ $job->creator->location->name }}
-                       </span>
+                        @if ($job->creator->location)
+                           <i class="marker icon"></i>
+                           <span class="location">
+                               {{ $job->creator->location->name }}
+                           </span>
+                       @endif
                     </div>
                     <div class="description">
                         <p>
@@ -113,10 +115,12 @@
                         <a
                             href="{{ $job->creator->company_website }}"
                             class="ui basic grey button" target="_blank">
-                            View Company
+                            Visit
                         </a>
-                        <a href="{{ url('/about') }}" class="ui basic grey button">
-                            Company's Jobs
+                        <a
+                            href="{{ url('/about') }}"
+                            class="ui basic grey button">
+                            Jobs
                         </a>
                     </div>
                 </div>
