@@ -26,6 +26,7 @@ class CreateJobsTable extends Migration
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('location_id')->nullable();
             $table->boolean('is_remote')->default(0);
+            $table->boolean('is_closed')->default(0);
             $table->string('salary')->nullable();
             $table->timestamps();
 

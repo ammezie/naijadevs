@@ -9,6 +9,8 @@
         </div>
 
         <div class="twelve wide column">
+            @include('includes.flash.success')
+            
             @if ($jobs->isEmpty())
                 <p>Oops!!! Looks like you haven't created any jobs yet. <a href="{{ route('post_job') }}">Create one</a> now!</p>
             @else

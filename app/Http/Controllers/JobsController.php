@@ -119,10 +119,11 @@ class JobsController extends Controller
             'location_id' => $request->is_remote ? null : $request->location_id,
             'salary' => $request->salary,
             'is_remote' => $request->has('is_remote') ?? 0,
+            'is_closed' => $request->has('is_closed') ?? 0,
         ];
 
         $job->updateJob($attributes);
 
-        return redirect($job->path());
+        return redirect('/my-jobs')->with('success', 'Job updated!');
     }
 }

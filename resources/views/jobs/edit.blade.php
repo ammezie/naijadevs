@@ -170,6 +170,23 @@
                             placeholder="80,000 ~ 120,000 or fixed amount">
                     </div>
                 </div>
+
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input
+                            type="checkbox"
+                            id="is_closed"
+                            name="is_closed"
+                            value="1"
+                            @if (old('is_closed'))
+                                {{ old('is_closed') ? 'checked' : '' }}
+                            @else
+                                {{ $job->is_closed ? 'checked' : '' }}
+                            @endif
+                            tabindex="0">
+                        <label for="is_closed">Mark job as closed</label>
+                    </div>
+                </div>
               
                 <button type="submit" class="ui primary button">Update Job</button>                
             </form>
