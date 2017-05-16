@@ -66,7 +66,7 @@
             @endif
 
             <div class="ui center aligned one column grid">
-                <div class="column wide">
+                <div class="column">
                     {{ $jobs->links() }}
                 </div>
             </div>

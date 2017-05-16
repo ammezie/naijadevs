@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Location;
+use App\Http\Requests\CompanyRequest;
 use App\Http\Requests\UserProfileRequest;
 
 class UsersController extends Controller
@@ -64,7 +65,9 @@ class UsersController extends Controller
      */
     public function showCompanyEditForm()
     {
-        //
+        $locations = Location::getAll();
+
+        return view('users.edit_company', compact('locations'));
     }
 
     /**
@@ -72,8 +75,17 @@ class UsersController extends Controller
      *
      * @return Illuminate\Http\Response
      */
-    public function updateCompany()
+    public function updateCompany(CompanyRequest $request)
     {
-       //
+        $user = auth()->user();
+
+        $user->company_name = $request->company_name;
+        $user->company_website = $request->company_website;
+        $user->company_location = $request->company_location;
+        $user->company_about = $request->company_about;
+
+        $user->save();
+
+        return back()->with('success', 'Company updated!');
     }
 }

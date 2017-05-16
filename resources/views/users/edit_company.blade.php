@@ -3,13 +3,89 @@
 @section('title', 'Company Settings')
 
 @section('content')
-    <div class="ui mobile reversed grid container">
+    <div class="ui stackable grid container">
         <div class="four wide column">
             @include('users.partials._user_nav')
         </div>
 
-        <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, libero, ab. Laboriosam error a iste id ab est esse sint! Fugit, laudantium rem molestiae porro vero perferendis eligendi qui, officia.
+        <div class="twelve wide column">
+            <h2 class="ui dividing header">Update Company</h2>
+
+            @include('includes.form_errors')
+            @include('includes.flash.success')
+
+            <form class="ui form" method="POST" action="{{ route('update_company') }}">
+                {{ method_field('PATCH') }}
+                {{ csrf_field() }}
+
+                <div class="ui stackable two column grid">
+                    <div class="column">
+                        <div class="required field{{ $errors->has('company_name') ? ' error' : '' }}">
+                            <label>Company Name</label>
+                            <input
+                                type="text"
+                                name="company_name"
+                                value="{{ old('company_name', auth()->user()->company_name) }}"
+                                placeholder="Company Name"
+                                required>
+                        </div>
+
+                        <div class="required field{{ $errors->has('company_website') ? ' error' : '' }}">
+                            <label>Company Website</label>
+                            <input
+                                type="text"
+                                name="company_website"
+                                value="{{ old('company_website', auth()->user()->company_website) }}"
+                                placeholder="http://company.com"
+                                required>
+                        </div>
+
+                        <div class="field{{ $errors->has('company_location') ? ' error' : '' }}">
+                            <label>Company Location</label>
+                            <select
+                                name="company_location"
+                                class="ui search dropdown">
+                                <option value="">Select Company Location</option>
+                                @foreach ($locations as $location)
+                                    <option
+                                        value="{{ $location->id }}"
+                                        @if (old('company_location'))
+                                            {{ (old('company_location') == $location->id) ? 'selected' : '' }}
+                                        @else
+                                            {{ (auth()->user()->company_location == $location->id) ? 'selected' : '' }}
+                                        @endif
+                                        >{{ $location->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="required field{{ $errors->has('company_about') ? ' error' : '' }}">
+                            <label>Brief About Company</label>
+                            <textarea
+                                name="company_about"
+                                id="company_about"
+                                rows="5"
+                                placeholder="Very brief about company">{{ old('company_about', auth()->user()->company_about) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field{{ $errors->has('company_name') ? ' error' : '' }}">
+                            <label>Company Logo</label>
+                            <input
+                                type="file"
+                                name="company_logo"
+                                value="{{ old('company_name', auth()->user()->company_name) }}"
+                                placeholder="Company Name">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ui one column grid">
+                    <div class="column">
+                        <button type="submit" class="ui primary button">Update Company</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 @endsection
