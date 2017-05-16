@@ -87,6 +87,6 @@ class Job extends Model
 
     public static function userJobs($user)
     {
-        return static::where('user_id', $user)->get();
+        return static::where('user_id', $user)->latest();
     }
 }

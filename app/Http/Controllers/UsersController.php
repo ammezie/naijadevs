@@ -15,6 +15,18 @@ class UsersController extends Controller
     }
 
     /**
+     * Get jobs created by the currently authenticated user
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function myJobs()
+    {
+        $jobs = Job::userJobs(auth()->id())->paginate(25);
+
+        return view('users.jobs', compact('jobs'));
+    }
+
+    /**
      * Show form for editing user account details
      *
      * @return \Illuminate\Http\Response

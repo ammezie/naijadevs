@@ -24,8 +24,9 @@ Route::get('/jobs/{job}/{title?}', 'JobsController@show');
 Route::post('/job_notify', 'JobNotificationsController@subscribe')->name('job_notify');
 
 // User Account
-Route::get('/my-jobs', 'UserJobsController@index');
+Route::get('/my-jobs', 'UsersController@myJobs');
 Route::group(['prefix' => 'settings'], function () {
+    Route::get('/', 'UsersController@showAccountEditForm');
     Route::get('/account', 'UsersController@showAccountEditForm');
     Route::patch('/account', 'UsersController@updateAccount')->name('update_account');
     Route::get('/company', 'UsersController@showCompanyEditForm');
