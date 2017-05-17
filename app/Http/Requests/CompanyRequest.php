@@ -26,6 +26,7 @@ class CompanyRequest extends FormRequest
         return [
             'company_name' => 'required',
             'company_website' => 'required|url',
+            'company_logo' => 'image',
         ];
     }
 }
