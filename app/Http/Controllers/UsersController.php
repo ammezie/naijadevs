@@ -84,6 +84,12 @@ class UsersController extends Controller
         $user->company_location = $request->company_location;
         $user->company_about = $request->company_about;
 
+        if ($request->hasFile('company_logo')) {
+            $path = $request->company_logo->store('uploads');
+
+            $user->company_logo = $path;
+        }
+
         $user->save();
 
         return back()->with('success', 'Company updated!');

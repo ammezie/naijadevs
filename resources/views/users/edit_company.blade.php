@@ -14,7 +14,7 @@
             @include('includes.form_errors')
             @include('includes.flash.success')
 
-            <form class="ui form" method="POST" action="{{ route('update_company') }}">
+            <form class="ui form" method="POST" action="{{ route('update_company') }}" enctype="multipart/form-data">
                 {{ method_field('PATCH') }}
                 {{ csrf_field() }}
 
@@ -71,11 +71,13 @@
                     <div class="column">
                         <div class="field{{ $errors->has('company_name') ? ' error' : '' }}">
                             <label>Company Logo</label>
+                            @if (auth()->user()->company_logo)
+                                <img class="ui image" src="{{ asset(auth()->user()->company_logo) }}" alt="current logo">
+                            @endif
                             <input
                                 type="file"
                                 name="company_logo"
-                                value="{{ old('company_name', auth()->user()->company_name) }}"
-                                placeholder="Company Name">
+                                placeholder="Company Logo">
                         </div>
                     </div>
                 </div>
