@@ -6,13 +6,8 @@
                 <p>
                     Want to know when new jobs are posted? You will be notified about new jobs right in your inbox. Don't worry, we hate spam as much as you do.
                 </p>
-                <form action="{{ route('job_notify') }}" method="POST">
-                    {{ csrf_field() }}
-                    <div class="ui fluid action input">
-                        <input type="email" name="email" placeholder="Enter your email address" required>
-                        <button class="ui primary button">Subscribe</button>
-                    </div>
-                </form>
+                
+                <newsletter-form></newsletter-form>
             </div>
             <div class="column">
                 <h3 class="ui header" style="color: #fff">Want To Hire Talented Nigerian Developers</h3>

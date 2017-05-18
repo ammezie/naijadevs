@@ -177,6 +177,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Indal\Markdown\MarkdownServiceProvider::class,
+        App\Repositories\Newsletters\NewslettersServiceProvider::class,
+        App\Repositories\Notifications\NotificationsServiceProvider::class,
 
     ],
 

@@ -115,12 +115,12 @@
                         <a
                             href="{{ $job->creator->company_website }}"
                             class="ui basic grey button" target="_blank">
-                            Visit
+                            <i class="red linkify icon"></i> Visit
                         </a>
                         <a
                             href="{{ url('/about') }}"
                             class="ui basic grey button">
-                            Jobs
+                            <i class="red suitcase icon"></i> Jobs
                         </a>
                     </div>
                 </div>

@@ -13,17 +13,16 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('apply', require('./components/Apply.vue'));
+Vue.component('newsletter-form', require('./components/NewsletterForm.vue'));
 
 const app = new Vue({
     el: '#app',
 
     data: {
-        apply: 'url',
-        is_remote: false,
+      
     },
 
     methods: {
-
+        
     }
 });

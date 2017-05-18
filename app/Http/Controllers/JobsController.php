@@ -6,6 +6,7 @@ use App\Models\Job;
 use App\Models\JobType;
 use App\Models\Category;
 use App\Models\Location;
+use App\Events\JobCreated;
 use App\Http\Requests\JobRequest;
 
 class JobsController extends Controller
@@ -61,7 +62,8 @@ class JobsController extends Controller
             'is_remote' => $request->has('is_remote') ?? 0,
         ];
 
-        $job = Job::createJob($attributes);
+        // Create job and fire event
+        event(new JobCreated($job = Job::createJob($attributes)));
 
         return redirect($job->path());
     }
