@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('company_name');
+            $table->string('company_slug')->unique();
             $table->unsignedInteger('company_location')->nullable();
             $table->string('company_about')->nullable();
             $table->string('company_website');

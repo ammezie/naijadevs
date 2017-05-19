@@ -54,8 +54,34 @@ class User extends Authenticatable
         return $this->belongsTo(Location::class, 'company_location');
     }
 
+    /**
+     * Get a user by ID
+     *
+     * @param integer $userID
+     * @return User
+     */
     public static function getUserByID($userID)
     {
         return static::findOrFail($userID);
+    }
+
+    /**
+     * Get the URI of a company
+     *
+     * @return string
+     */
+    public function path()
+    {
+        return '/companies/' . str_slug($this->company_name);
+    }
+
+    /**
+     * Get jobs created by the company
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getCompanyJobs()
+    {
+        return $this->jobs()->where('is_closed', 0)->with('location', 'type', 'category');
     }
 }

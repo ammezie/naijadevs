@@ -22,7 +22,7 @@ class UserTest extends TestCase
             'user_id' => $user->id,
         ]);
 
-        $userJobs = Job::userJobs($user->id);
+        $userJobs = Job::userJobs($user->id)->get();
 
         $this->assertCount(1, $userJobs);
     }

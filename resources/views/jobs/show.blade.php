@@ -10,9 +10,9 @@
             <div class="ui divided grid">
                 <div class="three wide column">
                     @if (! is_null($job->creator->company_logo))
-                    <div class="ui middle aligned image">
+                    <a class="ui middle aligned image" href="{{ url($job->creator->path()) }}">
                         <img src="{{ asset($job->creator->company_logo) }}">
-                    </div>
+                    </a>
                     @endif
                 </div>
                 <div class="thirteen wide column">
@@ -115,12 +115,12 @@
                         <a
                             href="{{ $job->creator->company_website }}"
                             class="ui basic grey button" target="_blank">
-                            <i class="red linkify icon"></i> Visit
+                            Visit
                         </a>
                         <a
-                            href="{{ url('/about') }}"
+                            href="{{ url($job->creator->path()) }}"
                             class="ui basic grey button">
-                            <i class="red suitcase icon"></i> Jobs
+                            Jobs
                         </a>
                     </div>
                 </div>
