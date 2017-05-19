@@ -13,6 +13,9 @@
 
 Auth::routes();
 
+Route::get('/about', 'PagesController@about');
+Route::get('/pricing', 'PagesController@pricing');
+
 // Jobs
 Route::get('/', 'JobsController@index')->name('home');
 Route::get('/jobs', 'JobsController@index');
