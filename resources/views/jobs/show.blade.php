@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ $job->title }}
+    {{ $job->title }} at {{ $job->creator->company_name }}
 @stop
 
 @section('content')
@@ -128,19 +128,22 @@
 
             <div class="ui segment">
                 <div class="ui animated relaxed divided list">
-                    <a href="" class="item">
+                    <a
+                        class="item"
+                        href="https://twitter.com/intent/tweet?text={{ $job->title . ' at ' . $job->creator->company_name }}&url={{ url($job->path()) }}&hashtags={{ strtolower($job->category->name) }}, {{ strtolower(str_replace(' ', '', $job->type->name)) }}, {{ $job->is_remote ? 'remote' : strtolower($job->location->name) }}&via=naijadevs_ng"
+                        target="_blank">
                         <i class="twitter icon"></i>
                         Tweet this job
                     </a>
-                    <a href="" class="item">
+                    <a class="item" href="">
                         <i class="linkedin icon"></i>
                         Share on LinkedIn
                     </a>
-                    <a href="" class="item">
+                    <a class="item" href="">
                         <i class="facebook icon"></i>
                         Share on Facebook
                     </a>
-                    <a href="" class="item">
+                    <a class="item" href="">
                         <i class="mail icon"></i>
                         Mail to a friend
                     </a>
