@@ -29,7 +29,7 @@
                     @foreach ($jobs as $job)
                         <div class="item">
                             <div class="content">
-                                <a class="header" href="{{ $job->path() }}">
+                                <a class="header" href="{{ url($job->path()) }}">
                                     {{ $job->title }}
                                 </a>
                                 <div class="meta">

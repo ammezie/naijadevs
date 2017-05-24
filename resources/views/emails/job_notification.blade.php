@@ -1,12 +1,16 @@
 <p>
-    This is a job notification as per your request:
+    Here is the latest job on Naijadevs as per your request:
 </p>
 
-Job Title: {{ $job->title }}
-Job Decsription: {{ $job->description }}
-Job Location: {{ $job->is_remote ? 'Remote' : $job->location->name }}
+<p>
+    Job Title: <a href="{{ url($job->path()) }}">{{ $job->title }}</a> <br>
+    Location: {{ $job->is_remote ? 'Remote' : $job->location->name }} <br>
+    Posted: {{ $job->created_at->diffForHumans() }}
+</p>
 
-View Job
+<p>
+    Know someone that might be interested in this job? send to friend
+</p>
 
 <p>
     Regards,<br>

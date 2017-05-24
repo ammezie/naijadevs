@@ -50,7 +50,7 @@
                                 <img src="{{ $job->creator->company_logo ? asset($job->creator->company_logo) : '' }}">
                             </div>
                             <div class="content">
-                                <a class="header" href="{{ $job->path() }}">
+                                <a class="header" href="{{ url($job->path()) }}">
                                     {{ $job->title }}
                                 </a>
                                 <div class="meta">

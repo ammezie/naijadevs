@@ -27,6 +27,7 @@ class CompanyRequest extends FormRequest
             'company_name' => 'required',
             'company_website' => 'required|url',
             'company_logo' => 'image',
+            'company_about' => 'max:140',
         ];
     }
 }
