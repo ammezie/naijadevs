@@ -4,9 +4,28 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="Naijadevs connects talented Nigerian developers and designers with companies who needs them.">
-
+    
     <title>@yield('title') - Naijadevs</title>
+
+    <meta name="description" content="@yield('meta-description')">
+
+    <!-- Facebook Open Graph Tags -->
+    <meta property="og:title" content="@yield('og-title')">
+    <meta property="og:url" content="@yield('og-url')">
+    <meta property="og:description" content="@yield('og-description')">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="link to image">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:site_name" content="Naijadevs">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@naijadevs_ng">
+    <meta name="twitter:title" content="@yield('twitter-title')">
+    <meta name="twitter:description" content="@yield('twitter-description')">
+    <meta name="twitter:image" content="link to image">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -28,6 +47,14 @@
     </script>
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) return;
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <div id="app">
         @include('partials._navbar')
         <div id="main" style="margin-top: 50px; margin-bottom: 50px;">

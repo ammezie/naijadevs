@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('title', 'Log In')
+@section('meta-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them.')
+@section('og-title', 'Login to Naijadevs')
+@section('og-url', route('login'))
+@section('og-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
+@section('twitter-title', 'Login to Naijadevs')
+@section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
 
 @section('content')
     <div class="ui stackable three column centered grid container">

@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('title', 'Edit Job')
+@section('meta-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them.')
+@section('og-title', 'Naijadevs')
+@section('og-url', config('app.url'))
+@section('og-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
+@section('twitter-title', 'Naijadevs')
+@section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
 
 @push('styles')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">

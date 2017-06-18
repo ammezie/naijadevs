@@ -4,6 +4,13 @@
     {{ $job->title }} at {{ $job->creator->company_name }}
 @stop
 
+@section('meta-description', str_limit($job->description, 160))
+@section('og-title', $job->title)
+@section('og-url', url($job->path()))
+@section('og-description', str_limit($job->description, 160))
+@section('twitter-title',  $job->title)
+@section('twitter-description', str_limit($job->description, 160))
+
 @section('content')
     <div class="ui stackable grid container">
         <div class="twelve wide column">
@@ -143,6 +150,9 @@
                         <i class="facebook icon"></i>
                         Share on Facebook
                     </a>
+                    <div class="fb-share-button"
+                        data-href="{{ url($job->path()) }}">
+                    </div>
                     <a class="item" href="">
                         <i class="mail icon"></i>
                         Mail to a friend

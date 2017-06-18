@@ -4,6 +4,13 @@
     {{ $company->company_name }}
 @stop
 
+@section('meta-description', str_limit($company->company_about, 160))
+@section('og-title', $company->company_name)
+@section('og-url', url($company->path()))
+@section('og-description', str_limit($company->company_about, 160))
+@section('twitter-title',  $company->company_name)
+@section('twitter-description', str_limit($company->company_about, 160))
+
 @section('content')
     <div class="ui container">
         <div class="ui basic segment">

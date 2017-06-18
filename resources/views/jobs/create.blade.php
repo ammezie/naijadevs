@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Create A Job')
+@section('title', 'Post New Job')
+@section('meta-description', 'Post new job on Naijadevs.')
+@section('og-title', 'Post New Job')
+@section('og-url', route('post_job'))
+@section('og-description', 'Post new job on Naijadevs.')
+@section('twitter-title', 'Post New Job')
+@section('twitter-description', 'Post new job on Naijadevs.')
 
 @push('styles')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
@@ -10,7 +16,7 @@
     <div class="ui stackable two column centered grid container">
         <div class="column">
             <h3 class="ui dividing header">
-                Create a Job
+                Post a Job
                 <div class="sub header">Be descriptive as possible with your job.</div>
             </h3>
 
