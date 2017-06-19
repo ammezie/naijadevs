@@ -142,7 +142,9 @@
                         <i class="twitter icon"></i>
                         Tweet this job
                     </a>
-                    <a class="item" href="">
+                    <a class="item"
+                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ url($job->path()) }}&title={{ $job->title . ' at ' . $job->creator->company_name }}&summary={{ str_limit($job->description, 140) }}"
+                        target="_blank">
                         <i class="linkedin icon"></i>
                         Share on LinkedIn
                     </a>
