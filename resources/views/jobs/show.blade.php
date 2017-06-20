@@ -154,7 +154,17 @@
                         <i class="facebook icon"></i>
                         Share on Facebook
                     </a>
-                    <a class="item" href="">
+                    @php
+                        $newline = '%0D%0A';
+                        $doubleNewline = '%0D%0A%0D%0A';
+                        $jobTile = $job->title . ' at ' . $job->creator->company_name;
+                        $jobPath = url($job->path());
+                        $jobDescription = str_limit($job->description, 160);
+                        $body = "Hi$doubleNewline I found this job on Naijadevs and was thinking you might be interested:$doubleNewline $jobTile $newline $jobDescription $newline $jobPath";
+                    @endphp
+                    <a class="item"
+                        href="mailto:?subject={{ rawurlencode($job->title . ' at ' . $job->creator->company_name) }}&body={{ $body }}"
+                        target="_top">
                         <i class="mail icon"></i>
                         Mail to a friend
                     </a>
