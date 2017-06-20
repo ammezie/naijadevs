@@ -137,24 +137,23 @@
                 <div class="ui animated relaxed divided list">
                     <a
                         class="item"
-                        href="https://twitter.com/intent/tweet?text={{ $job->title . ' at ' . $job->creator->company_name }}&url={{ url($job->path()) }}&hashtags={{ strtolower($job->category->name) }}, {{ strtolower(str_replace(' ', '', $job->type->name)) }}, {{ $job->is_remote ? 'remote' : strtolower($job->location->name) }}&via=naijadevs_ng"
+                        href="https://twitter.com/intent/tweet?text={{ $job->title . ' at ' . $job->creator->company_name }}&url={{ urlencode(url($job->path())) }}&hashtags={{ strtolower($job->category->name) }}, {{ strtolower(str_replace(' ', '', $job->type->name)) }}, {{ $job->is_remote ? 'remote' : strtolower($job->location->name) }}&via=naijadevs_ng"
                         target="_blank">
                         <i class="twitter icon"></i>
                         Tweet this job
                     </a>
                     <a class="item"
-                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ url($job->path()) }}&title={{ $job->title . ' at ' . $job->creator->company_name }}&summary={{ str_limit($job->description, 140) }}"
+                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlencode(url($job->path())) }}&title={{ $job->title . ' at ' . $job->creator->company_name }}&summary={{ str_limit($job->description, 160) }}"
                         target="_blank">
                         <i class="linkedin icon"></i>
                         Share on LinkedIn
                     </a>
-                    <a class="item" href="">
+                    <a class="item"
+                        href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url($job->path())) }}"
+                        target="_blank">
                         <i class="facebook icon"></i>
                         Share on Facebook
                     </a>
-                    <div class="fb-share-button"
-                        data-href="{{ url($job->path()) }}">
-                    </div>
                     <a class="item" href="">
                         <i class="mail icon"></i>
                         Mail to a friend
