@@ -9,7 +9,7 @@
 @section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
 
 @push('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 @endpush
 
 @section('content')
@@ -201,7 +201,7 @@
 @endsection
 
 @push('scripts')
-    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     <script>
         $('#apply').change(function() {
             if ($(this).val() == 'url') {

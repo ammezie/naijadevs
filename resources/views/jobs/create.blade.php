@@ -9,7 +9,7 @@
 @section('twitter-description', 'Post new job on Naijadevs.')
 
 @push('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 @endpush
 
 @section('content')
@@ -49,15 +49,15 @@
                     <label>How To Apply</label>
                     <select
                         name="apply"
+                        id="apply"
                         class="ui dropdown"
-                        v-model="apply"
                         required>
                         <option value="url">External URL</option>
                         <option value="email">Email</option>
                     </select>
                 </div>
 
-                <div class="required field" v-if="apply === 'url'">
+                <div class="required field" id="apply_url">
                     <label>Link</label>
                     <input
                         type="url"
@@ -66,7 +66,7 @@
                         placeholder="http://">
                 </div>
 
-                <div class="two fields" v-else>
+                <div class="two fields" id="apply_email" style="display: none">
                     <div class="required field">
                         <label>Email Address</label>
                         <input
@@ -105,7 +105,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="required field{{ $errors->has('location_id') ? ' error' : '' }}" :class="{ disabled: is_remote }">
+                    <div class="required field{{ $errors->has('location_id') ? ' error' : '' }}" id="location">
                         <label>Location</label>
                         <select
                             name="location_id"
@@ -134,8 +134,7 @@
                                 name="is_remote"
                                 value="1"
                                 {{ old('is_remote') ? 'checked' : '' }}
-                                tabindex="0"
-                                v-model="is_remote">
+                                tabindex="0">
                             <label for="is_remote">This is a remote job</label>
                         </div>
                     </div>
@@ -180,8 +179,26 @@
 @endsection
 
 @push('scripts')
-    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     <script>
+        $('#apply').change(function() {
+            if ($(this).val() == 'url') {
+                $('#apply_url').show();
+                $('#apply_email').hide();
+            } else {
+                $('#apply_email').show();
+                $('#apply_url').hide();
+            }
+        });
+
+        $('#is_remote').click(function() {
+            if ($('#is_remote').prop('checked')) {
+                $('#location').addClass('disabled');
+            } else {
+                $('#location').removeClass('disabled');
+            }
+        });
+
         var simplemde = new SimpleMDE({
             element: document.getElementById('description'),
             forceSync: true,

@@ -7,22 +7,24 @@ use App\Models\JobType;
 use App\Models\Category;
 use App\Models\Location;
 use App\Events\JobCreated;
+use Illuminate\Http\Request;
 use App\Http\Requests\JobRequest;
 
 class JobsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except(['index', 'show', 'filterJobs']);
     }
 
     public function index()
     {
-        $jobs = Job::getOpenJobs()->paginate(25);
+        $jobs = Job::getOpenJobs()->latest()->paginate(25);
         $jobTypes = JobType::getAll();
         $categories = Category::getAll();
+        $locations = Location::getAll();
 
-        return view('jobs.index', compact('jobs', 'jobTypes', 'categories'));
+        return view('jobs.index', compact('jobs', 'jobTypes', 'categories', 'locations'));
     }
 
     /**
@@ -127,5 +129,45 @@ class JobsController extends Controller
         $job->updateJob($attributes);
 
         return redirect('/my-jobs')->with('success', 'Job updated!');
+    }
+
+    /**
+     * Filter jobs
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function filterJobs(Request $request)
+    {
+        $jobQuery = (new Job)->newQuery()->where('is_closed', 0)->latest();
+
+        if ($request->has('category')) {
+            $category = Category::where('slug', $request->category)->firstOrFail();
+
+            $jobQuery->where('category_id', $category->id);
+        }
+
+        if ($request->has('type')) {
+            $type = JobType::where('slug', $request->type)->firstOrFail();
+
+            $jobQuery->where('type_id', $type->id);
+        }
+
+        if ($request->has('location')) {
+            $location = Location::where('slug', $request->location)->firstOrFail();
+
+            $jobQuery->where('location_id', $location->id);
+        }
+
+        if ($request->has('is_remote')) {
+            $jobQuery->where('is_remote', 1);
+        }
+
+        $jobs = $jobQuery->with('creator', 'type', 'category', 'location')->paginate(25);
+        $jobTypes = JobType::getAll();
+        $categories = Category::getAll();
+        $locations = Location::getAll();
+
+        return view('jobs.filtered', compact('jobs', 'jobTypes', 'categories', 'locations'));
     }
 }

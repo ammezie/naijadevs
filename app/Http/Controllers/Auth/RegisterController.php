@@ -94,6 +94,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'company_name' => $data['company_name'],
+            'company_slug' => str_slug($data['company_name']),
             'company_website' => $data['company_website'],
         ]);
     }

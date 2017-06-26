@@ -24,6 +24,7 @@ Route::post('/jobs', 'JobsController@store');
 Route::get('/jobs/{job}/edit', 'JobsController@edit');
 Route::patch('/jobs/{job}', 'JobsController@update');
 Route::get('/jobs/{job}/{title?}', 'JobsController@show');
+Route::get('/filters', 'JobsController@filterJobs');
 
 // Companies
 Route::get('/companies/{company}', 'CompaniesController@show');

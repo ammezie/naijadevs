@@ -103,6 +103,6 @@ class Job extends Model
      */
     public static function getOpenJobs()
     {
-        return static::where('is_closed', 0)->with('creator', 'type', 'category', 'location')->latest();
+        return static::where('is_closed', 0)->with('creator', 'type', 'category', 'location');
     }
 }
