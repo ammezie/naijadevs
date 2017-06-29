@@ -1,3 +1,55 @@
 /*******************************
      User Global Variables
 *******************************/
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName          : 'Titillium Web';
+@fontNameWithPlus  : 'Titillium+Web';
+@fontSmoothing     : antialiased;
+
+@headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+@googleFontName    : @fontNameWithPlus;
+@importGoogleFonts : true;
+@googleFontSizes   : '400,700,400i,700i';
+@googleSubset      : 'latin';
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@primaryColor        : @naijadevsCyan;
+@secondaryColor      : @naijadevsGrey;
+
+@lightPrimaryColor   : @naijadevsLightCyan;
+@lightSecondaryColor : @naijadevsLightGrey;
+
+/*---  Colors  ---*/
+@naijadevsCyan       : #00B1B3;
+@naijadevsGrey       : #808080;
+@naijadevsLightCyan  : #54C8FF;
+@naijadevsLightGrey  : #545454;
+
+/*-------------------
+        Page
+--------------------*/
+
+@textColor           : #808080;
+
+/*-------------------
+       Links
+--------------------*/
+
+@linkColor           : #00B1B3;
+@linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
+
+/*-------------------
+     Neutral Text
+--------------------*/
+
+@darkTextColor : #808080;
+

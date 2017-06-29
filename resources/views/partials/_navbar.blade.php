@@ -2,7 +2,7 @@
     <div class="ui container">
         <div class="item">
             <a href="{{ url('/') }}" class="">
-                <img src="{{ asset('images/logo.png') }}" alt="Naijadevs Logo">
+                <img src="{{ asset('images/logo.svg') }}" alt="Naijadevs Logo" width="145px" height="48px">
             </a>
         </div>
         <a class="item" href="{{ url('/about') }}">
