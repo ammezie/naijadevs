@@ -28,6 +28,7 @@ class CreateJobsTable extends Migration
             $table->boolean('is_remote')->default(0);
             $table->boolean('is_closed')->default(0);
             $table->string('salary')->nullable();
+            $table->string('closes_at');
             $table->timestamps();
 
             $table->foreign('user_id')

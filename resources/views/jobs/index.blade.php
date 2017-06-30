@@ -17,7 +17,7 @@
             <div class="ui divider"></div>
 
             @if ($jobs->isEmpty())
-                <p>Sorry!!! There are currently no jobs posted.</p>
+                <p>Sorry!!! There are currently no open jobs.</p>
             @else
                 <div class="ui divided relaxed items">
                     @foreach ($jobs as $job)

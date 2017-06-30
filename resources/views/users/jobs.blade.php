@@ -53,12 +53,14 @@
                                         <i class="red {{ $job->is_remote ? 'world' : 'marker' }} icon"></i>
                                         {{ $job->is_remote ? 'Remote' : $job->location->name }}
                                     </span>
-                                    <span class="ui right floated">
-                                        <a class="ui label" href="{{ url('/jobs/' . $job->id .'/edit') }}">
-                                            <i class="edit icon"></i>
-                                            Edit Job
-                                        </a>
-                                    </span>
+                                    @if (! $job->isClosed() || ! $job->hasPassedDuration())
+                                        <span class="ui right floated">
+                                            <a class="ui label" href="{{ url('/jobs/' . $job->id .'/edit') }}">
+                                                <i class="edit icon"></i>
+                                                Edit Job
+                                            </a>
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="extra">
                                     <span class="date">

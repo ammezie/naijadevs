@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Job;
 use App\Models\JobType;
 use App\Models\Category;
@@ -62,6 +63,7 @@ class JobsController extends Controller
             'location_id' => $request->is_remote ? null : $request->location_id,
             'salary' => $request->salary,
             'is_remote' => $request->has('is_remote') ?? 0,
+            'closes_at' => Carbon::now()->addDays(60),
         ];
 
         // Create job and fire event
@@ -139,7 +141,10 @@ class JobsController extends Controller
      */
     public function filterJobs(Request $request)
     {
-        $jobQuery = (new Job)->newQuery()->where('is_closed', 0)->latest();
+        $jobQuery = (new Job)->newQuery()
+                            ->where('is_closed', 0)
+                            ->where('closes_at', '>', Carbon::now())
+                            ->latest();
 
         if ($request->has('category')) {
             $category = Category::where('slug', $request->category)->firstOrFail();

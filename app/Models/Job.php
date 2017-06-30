@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
@@ -12,6 +13,8 @@ class Job extends Model
      * @var array
      */
     protected $guarded = ['id'];
+
+    protected $dates = ['closes_at'];
 
     /**
      * Get the URI of a job
@@ -103,6 +106,32 @@ class Job extends Model
      */
     public static function getOpenJobs()
     {
-        return static::where('is_closed', 0)->with('creator', 'type', 'category', 'location');
+        return static::where('is_closed', 0)
+                    ->where('closes_at', '>', Carbon::now())
+                    ->with('creator', 'type', 'category', 'location');
+    }
+
+    /**
+     * Job is closed
+     *
+     * @return boolean
+     */
+    public function isClosed()
+    {
+        return !! $this->is_closed;
+    }
+
+    /**
+     * Job has been posted for over 60days
+     *
+     * @return boolean
+     */
+    public function hasPassedDuration()
+    {
+        if (! $this->closes_at) {
+            return false;
+        }
+
+        return Carbon::now()->gt($this->closes_at);
     }
 }
