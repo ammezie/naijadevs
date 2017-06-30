@@ -107,7 +107,7 @@ class Job extends Model
     public static function getOpenJobs()
     {
         return static::where('is_closed', 0)
-                    ->where('closes_at', '>', Carbon::now())
+                    ->whereDate('closes_at', '>', Carbon::now())
                     ->with('creator', 'type', 'category', 'location');
     }
 
