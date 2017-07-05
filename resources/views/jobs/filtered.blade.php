@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="ui grid container">
-        <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
+        <div class="sixteen wide mobile twelve wide tablet twelve wide computer column">
             
             @include('partials._filters')
 
@@ -23,7 +23,7 @@
                     @foreach ($jobs as $job)
                         <div class="item">
                             <div class="ui tiny image">
-                                <img src="{{ $job->creator->company_logo ? asset($job->creator->company_logo) : '' }}">
+                                <img src="{{ $job->creator->company_logo ? asset($job->creator->company_logo) : asset('images/company_logo.png') }}">
                             </div>
                             <div class="content">
                                 <a class="header" href="{{ url($job->path()) }}">
@@ -66,41 +66,8 @@
             </div>
         </div>
 
-        <div class="four wide column large screen only">
-            <h3 class="ui top attached header">
-                <i class="red fitted filter icon"></i>
-                <div class="content">
-                    Filters
-                </div>
-            </h3>
-
-            <div class="ui attached padded segment">
-                <h4 class="ui header">Type</h4>
-                <div class="ui list">
-                    @foreach ($jobTypes as $type)
-                        <div class="item">
-                            <div class="ui checkbox">
-                                <input id="{{ str_slug($type->name) }}" type="checkbox" name="type">
-                                <label for="{{ str_slug($type->name) }}">
-                                    <a href="{{ url('') }}">{{ $type->name }}</a>
-                                </label>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
-                <h4 class="ui header">Category</h4>
-                <div class="ui list">
-                    @foreach ($categories as $category)
-                        <div class="item">
-                            <div class="ui checkbox">
-                                <input id="{{ str_slug($category->name) }}" type="checkbox" name="category">
-                                <label for="{{ str_slug($category->name) }}">{{ $category->name }}</label>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
+        <div class="sixteen wide mobile four wide tablet four wide computer column">
+            @include('partials._sidebar')
         </div>
     </div>
 @endsection

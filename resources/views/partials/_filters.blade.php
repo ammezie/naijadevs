@@ -1,5 +1,5 @@
 <form class="ui form" action="{{ url('/filters') }}">
-    <div class="fields">
+    <div class="four fields">
         <div class="field">
             <div class="ui selection dropdown">
                 <input type="hidden" name="category">
