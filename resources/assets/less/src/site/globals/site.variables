@@ -53,3 +53,13 @@
 
 @darkTextColor : #808080;
 
+/* Input Text Color */
+@inputColor: #000000;
+@inputPlaceholderColor: #bfbfbf;
+@inputPlaceholderFocusColor: #bfbfbf;
+
+/* Used on inputs, textarea etc */
+@focusedFormBorderColor: @naijadevsCyan;
+
+/* Used on dropdowns, other larger blocks */
+@focusedFormMutedBorderColor: @naijadevsCyan;

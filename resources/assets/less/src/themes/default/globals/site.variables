@@ -77,7 +77,7 @@
 @inputPadding           : @inputVerticalPadding @inputHorizontalPadding;
 
 /* Input Text Color */
-@inputColor: @textColor;
+@inputColor: @linkColor;
 @inputPlaceholderColor: lighten(@inputColor, 75);
 @inputPlaceholderFocusColor: lighten(@inputColor, 45);
 

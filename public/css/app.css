@@ -629,6 +629,9 @@
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -1655,6 +1658,9 @@ th {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -2044,6 +2050,9 @@ th {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*******************************
              Mix-ins
 *******************************/
@@ -2802,6 +2811,9 @@ input::selection {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -6797,6 +6809,9 @@ input::selection {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -7577,6 +7592,9 @@ input::selection {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -8466,6 +8484,9 @@ input::selection {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -10127,6 +10148,9 @@ i.flag.zimbabwe:before {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -11427,6 +11451,9 @@ a.ui.inverted.grey.header:hover {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -15276,6 +15303,9 @@ i.icon.times.rectangle.outline:before {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -16205,6 +16235,9 @@ img.ui.bordered.image {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -16285,7 +16318,7 @@ img.ui.bordered.image {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  color: #808080;
+  color: #000000;
 }
 .ui.input input {
   margin: 0em;
@@ -16301,7 +16334,7 @@ img.ui.bordered.image {
   padding: 0.67857143em 1em;
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
-  color: #808080;
+  color: #000000;
   border-radius: 0.28571429rem;
   transition: box-shadow 0.1s ease, border-color 0.1s ease;
   box-shadow: none;
@@ -16311,13 +16344,13 @@ img.ui.bordered.image {
 ---------------------*/
 /* browsers require these rules separate */
 .ui.input input::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #bfbfbf;
 }
 .ui.input input::-moz-placeholder {
-  color: #ffffff;
+  color: #bfbfbf;
 }
 .ui.input input:-ms-input-placeholder {
-  color: #ffffff;
+  color: #bfbfbf;
 }
 /*******************************
             States
@@ -16380,22 +16413,22 @@ img.ui.bordered.image {
 ---------------------*/
 .ui.input.focus input,
 .ui.input input:focus {
-  border-color: #85B7D9;
+  border-color: #00B1B3;
   background: #FFFFFF;
   color: rgba(0, 0, 0, 0.8);
   box-shadow: none;
 }
 .ui.input.focus input::-webkit-input-placeholder,
 .ui.input input:focus::-webkit-input-placeholder {
-  color: #f3f3f3;
+  color: #bfbfbf;
 }
 .ui.input.focus input::-moz-placeholder,
 .ui.input input:focus::-moz-placeholder {
-  color: #f3f3f3;
+  color: #bfbfbf;
 }
 .ui.input.focus input:-ms-input-placeholder,
 .ui.input input:focus:-ms-input-placeholder {
-  color: #f3f3f3;
+  color: #bfbfbf;
 }
 /*--------------------
         Error
@@ -16549,7 +16582,7 @@ img.ui.bordered.image {
   border-left-color: transparent;
 }
 .ui.labeled.input:not([class*="corner labeled"]) .label:first-child + input:focus {
-  border-left-color: #85B7D9;
+  border-left-color: #00B1B3;
 }
 /* Regular Label on Right */
 .ui[class*="right labeled"].input input {
@@ -16562,7 +16595,7 @@ img.ui.bordered.image {
   border-bottom-left-radius: 0px;
 }
 .ui[class*="right labeled"].input input:focus {
-  border-right-color: #85B7D9 !important;
+  border-right-color: #00B1B3 !important;
 }
 /* Corner Label */
 .ui.labeled.input .corner.label {
@@ -16639,7 +16672,7 @@ img.ui.bordered.image {
 }
 /* Input Focus */
 .ui.action.input:not([class*="left action"]) input:focus {
-  border-right-color: #85B7D9 !important;
+  border-right-color: #00B1B3 !important;
 }
 /* Button on Left */
 .ui[class*="left action"].input > input {
@@ -16659,7 +16692,7 @@ img.ui.bordered.image {
 }
 /* Input Focus */
 .ui[class*="left action"].input > input:focus {
-  border-left-color: #85B7D9 !important;
+  border-left-color: #00B1B3 !important;
 }
 /*--------------------
        Inverted
@@ -17328,6 +17361,9 @@ img.ui.bordered.image {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -19179,6 +19215,9 @@ a.ui.basic.label:hover {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -20756,6 +20795,9 @@ ol.ui.horizontal.list li:before,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -21729,6 +21771,9 @@ ol.ui.horizontal.list li:before,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -22510,6 +22555,9 @@ ol.ui.horizontal.list li:before,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -23393,6 +23441,9 @@ ol.ui.horizontal.list li:before,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -24787,6 +24838,9 @@ ol.ui.horizontal.list li:before,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -26026,6 +26080,9 @@ ol.ui.horizontal.list li:before,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -26776,6 +26833,9 @@ ol.ui.horizontal.list li:before,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -27137,22 +27197,22 @@ ol.ui.horizontal.list li:before,
 ---------------------*/
 /* browsers require these rules separate */
 .ui.form ::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #bfbfbf;
 }
 .ui.form :-ms-input-placeholder {
-  color: #ffffff;
+  color: #bfbfbf;
 }
 .ui.form ::-moz-placeholder {
-  color: #ffffff;
+  color: #bfbfbf;
 }
 .ui.form :focus::-webkit-input-placeholder {
-  color: #f3f3f3;
+  color: #bfbfbf;
 }
 .ui.form :focus:-ms-input-placeholder {
-  color: #f3f3f3;
+  color: #bfbfbf;
 }
 .ui.form :focus::-moz-placeholder {
-  color: #f3f3f3;
+  color: #bfbfbf;
 }
 /* Error Placeholder */
 .ui.form .error ::-webkit-input-placeholder {
@@ -27189,14 +27249,14 @@ ol.ui.horizontal.list li:before,
 .ui.form input[type="file"]:focus,
 .ui.form input[type="url"]:focus {
   color: rgba(0, 0, 0, 0.95);
-  border-color: #85B7D9;
+  border-color: #00B1B3;
   border-radius: 0.28571429rem;
   background: #FFFFFF;
   box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
 }
 .ui.form textarea:focus {
   color: rgba(0, 0, 0, 0.95);
-  border-color: #85B7D9;
+  border-color: #00B1B3;
   border-radius: 0.28571429rem;
   background: #FFFFFF;
   box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
@@ -28450,6 +28510,9 @@ ol.ui.horizontal.list li:before,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -31010,6 +31073,9 @@ ol.ui.horizontal.list li:before,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -33541,6 +33607,9 @@ Floated Menu / Item
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -34631,6 +34700,9 @@ Floated Menu / Item
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -36326,6 +36398,9 @@ Floated Menu / Item
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -37179,6 +37254,9 @@ Floated Menu / Item
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -38750,6 +38828,9 @@ a.ui.card:hover,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -39651,6 +39732,9 @@ a.ui.card:hover,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -40593,6 +40677,9 @@ a.ui.card:hover,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -41700,6 +41787,9 @@ a.ui.card:hover,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -42895,6 +42985,9 @@ a.ui.card:hover,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -43778,6 +43871,9 @@ a.ui.card:hover,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -43985,7 +44081,7 @@ a.ui.card:hover,
 .ui.checkbox input:focus ~ .box:before,
 .ui.checkbox input:focus ~ label:before {
   background: #FFFFFF;
-  border-color: #96C8DA;
+  border-color: #00B1B3;
 }
 .ui.checkbox input:focus ~ .box:after,
 .ui.checkbox input:focus ~ label:after {
@@ -44028,7 +44124,7 @@ a.ui.card:hover,
 .ui.checkbox input:checked:focus ~ .box:before,
 .ui.checkbox input:checked:focus ~ label:before {
   background: #FFFFFF;
-  border-color: #96C8DA;
+  border-color: #00B1B3;
 }
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ .box:after,
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ label:after,
@@ -45003,6 +45099,9 @@ a.ui.card:hover,
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -45831,6 +45930,9 @@ body.dimmable > .dimmer {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -46384,20 +46486,20 @@ select.ui.dropdown {
 }
 /* Active */
 .ui.selection.active.dropdown {
-  border-color: #96C8DA;
+  border-color: #00B1B3;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
 }
 .ui.selection.active.dropdown .menu {
-  border-color: #96C8DA;
+  border-color: #00B1B3;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
 }
 /* Focus */
 .ui.selection.dropdown:focus {
-  border-color: #96C8DA;
+  border-color: #00B1B3;
   box-shadow: none;
 }
 .ui.selection.dropdown:focus .menu {
-  border-color: #96C8DA;
+  border-color: #00B1B3;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
 }
 /* Visible */
@@ -46407,11 +46509,11 @@ select.ui.dropdown {
 }
 /* Visible Hover */
 .ui.selection.active.dropdown:hover {
-  border-color: #96C8DA;
+  border-color: #00B1B3;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
 }
 .ui.selection.active.dropdown:hover .menu {
-  border-color: #96C8DA;
+  border-color: #00B1B3;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
 }
 /* Dropdown Icon */
@@ -46492,7 +46594,7 @@ select.ui.dropdown {
   opacity: 0.45;
 }
 .ui.active.search.dropdown input.search:focus + .text {
-  color: #f3f3f3 !important;
+  color: #bfbfbf !important;
 }
 /* Search Menu */
 .ui.search.dropdown .menu {
@@ -46704,11 +46806,11 @@ select.ui.dropdown {
 ----------------------*/
 .ui.dropdown:not(.button) > .default.text,
 .ui.default.dropdown:not(.button) > .text {
-  color: #ffffff;
+  color: #bfbfbf;
 }
 .ui.dropdown:not(.button) > input:focus + .default.text,
 .ui.default.dropdown:not(.button) > input:focus + .text {
-  color: #f3f3f3;
+  color: #bfbfbf;
 }
 /*--------------------
         Loading
@@ -47866,6 +47968,9 @@ select.ui.dropdown {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -48663,6 +48768,9 @@ select.ui.dropdown {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -49786,6 +49894,9 @@ select.ui.dropdown {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -50577,6 +50688,9 @@ a.ui.nag {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -51927,6 +52041,9 @@ a.ui.nag {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -53052,6 +53169,9 @@ a.ui.nag {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -53924,6 +54044,9 @@ a.ui.nag {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -54953,6 +55076,9 @@ a.ui.nag {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -55728,6 +55854,9 @@ a.ui.nag {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -56926,6 +57055,9 @@ html.ios {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -57620,6 +57752,9 @@ html.ios {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -58332,6 +58467,9 @@ html.ios {
 /*-------------------
      Neutral Text
 --------------------*/
+/* Input Text Color */
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
 /*-------------------
  Component Variables
 ---------------------*/

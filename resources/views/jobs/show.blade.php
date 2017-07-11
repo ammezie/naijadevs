@@ -15,14 +15,12 @@
     <div class="ui stackable grid container">
         <div class="twelve wide column">
             <div class="ui divided grid">
-                <div class="three wide column">
-                    @if (! is_null($job->creator->company_logo))
-                    <a class="ui middle aligned image" href="{{ url($job->creator->path()) }}">
-                        <img src="{{ asset($job->creator->company_logo) }}">
+                <div class="two wide column">
+                    <a class="ui tiny image" href="{{ url($job->creator->path()) }}">
+                        <img src="{{ $job->creator->company_logo ? asset($job->creator->company_logo) : asset('images/company_logo.png') }}">
                     </a>
-                    @endif
                 </div>
-                <div class="thirteen wide column">
+                <div class="fourteen wide column">
                     <h2 class="ui header">
                         {{ $job->title }}
                     </h2>
