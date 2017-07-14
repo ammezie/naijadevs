@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="ui grid container">
-        <div class="sixteen wide mobile twelve wide tablet twelve wide computer column">
+        <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
             
             @include('partials._filters')
 
@@ -19,7 +19,7 @@
             @if ($jobs->isEmpty())
                 <p>No jobs found for your filters.</p>
             @else
-                <div class="ui divided relaxed items">
+                <div class="ui unstackable divided relaxed items">
                     @foreach ($jobs as $job)
                         <div class="item">
                             <div class="ui tiny image">
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <div class="sixteen wide mobile four wide tablet four wide computer column">
+        <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
             @include('partials._sidebar')
         </div>
     </div>

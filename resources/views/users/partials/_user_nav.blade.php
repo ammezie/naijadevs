@@ -1,4 +1,4 @@
-<div class="ui vertical pointing menu">
+<div class="ui fluid vertical pointing menu">
     <div class="item">
         <div class="header">Jobs</div>
         <div class="menu">

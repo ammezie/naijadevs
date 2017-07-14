@@ -50,7 +50,7 @@
     <div id="app">
         @include('partials._navbar')
         
-        <div id="main" style="margin-top: 50px; margin-bottom: 50px;">
+        <div id="main" class="pusher" style="margin-top: 50px; margin-bottom: 50px;">
             @yield('content')
         </div>
 

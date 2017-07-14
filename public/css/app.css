@@ -32988,6 +32988,17 @@ Floated Menu / Item
 /*******************************
          Site Overrides
 *******************************/
+.mobile-nav {
+  display: none !important;
+}
+@media only screen and (max-width: 767px) {
+  .mobile-nav {
+    display: block !important;
+  }
+  .computer-nav {
+    display: none !important;
+  }
+}
 /*!
  * # Semantic UI - Message
  * http://github.com/semantic-org/semantic-ui/
@@ -41152,12 +41163,6 @@ a.ui.card:hover,
 /*---------------
    Unstackable
 ----------------*/
-@media only screen and (max-width: 767px) {
-  .ui.unstackable.items > .item > .image,
-  .ui.unstackable.items > .item > .image > img {
-    width: 125px !important;
-  }
-}
 /*******************************
          Theme Overrides
 *******************************/

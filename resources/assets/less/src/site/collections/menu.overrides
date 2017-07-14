@@ -1,3 +1,17 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.mobile-nav {
+    display: none !important;
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+    .mobile-nav {
+        display: block !important;
+    }
+
+    .computer-nav {
+        display: none !important;
+    }
+}

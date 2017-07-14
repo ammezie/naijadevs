@@ -14,7 +14,7 @@
 @section('content')
     <div class="ui stackable grid container">
         <div class="twelve wide column">
-            <div class="ui divided grid">
+            {{-- <div class="ui divided grid">
                 <div class="two wide column">
                     <a class="ui tiny image" href="{{ url($job->creator->path()) }}">
                         <img src="{{ $job->creator->company_logo ? asset($job->creator->company_logo) : asset('images/company_logo.png') }}">
@@ -49,6 +49,42 @@
                         <div class="item">
                             <i class="red calendar icon"></i>
                             {{ $job->created_at->diffForHumans() }}
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            
+            <div class="ui unstackable items">
+                <div class="item">
+                    <a class="ui tiny image" href="{{ url($job->creator->path()) }}">
+                        <img src="{{ $job->creator->company_logo ? asset($job->creator->company_logo) : asset('images/company_logo.png') }}">
+                    </a>
+                    <div class="content">
+                        <h2 class="ui header">
+                            {{ $job->title }}
+                        </h2>
+
+                        <div class="meta">
+                           <span class="ui basic {{ $job->type->color }} label">
+                               {{ $job->type->name }}
+                           </span>
+                           <span class="ui basic {{ $job->category->color }} label">
+                               {{ $job->category->name }}
+                           </span>
+                           @if (! is_null($job->salary))
+                           <span>
+                               <i class="red money icon"></i>
+                               ₦{{ ($job->salary/1000) }}k
+                           </span>
+                           @endif
+                           <span class="item">
+                               <i class="red {{ $job->is_remote ? 'world' : 'marker' }} icon"></i>
+                               {{ $job->is_remote ? 'Remote' : $job->location->name }}
+                           </span>
+                           <span class="item">
+                               <i class="red calendar icon"></i>
+                               {{ $job->created_at->diffForHumans() }}
+                           </span>
                         </div>
                     </div>
                 </div>
