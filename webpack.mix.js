@@ -17,5 +17,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
 		'vue',
 		'axios'
 	])
-	.less('resources/assets/less/app.less', 'public/css');
+	.less('resources/assets/less/app.less', 'public/css/styles.css')
    // .sass('resources/assets/sass/app.scss', 'public/css');
+   .styles([
+        'public/css/styles.css',
+        'public/css/navbar.css'
+    ], 'public/css/app.css');
