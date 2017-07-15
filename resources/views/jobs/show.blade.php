@@ -14,46 +14,6 @@
 @section('content')
     <div class="ui stackable grid container">
         <div class="twelve wide column">
-            {{-- <div class="ui divided grid">
-                <div class="two wide column">
-                    <a class="ui tiny image" href="{{ url($job->creator->path()) }}">
-                        <img src="{{ $job->creator->company_logo ? asset($job->creator->company_logo) : asset('images/company_logo.png') }}">
-                    </a>
-                </div>
-                <div class="fourteen wide column">
-                    <h2 class="ui header">
-                        {{ $job->title }}
-                    </h2>
-
-                    <div class="ui horizontal list">
-                        <div class="item">
-                            <a class="ui basic {{ $job->type->color }} label">
-                                {{ $job->type->name }}
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a class="ui basic {{ $job->category->color }} label">
-                                {{ $job->category->name }}
-                            </a>
-                        </div>
-                        @if (! is_null($job->salary))
-                        <div class="item">
-                            <i class="red money icon"></i>
-                            ₦{{ ($job->salary/1000) }}k
-                        </div>
-                        @endif
-                        <div class="item">
-                            <i class="red {{ $job->is_remote ? 'world' : 'marker' }} icon"></i>
-                            {{ $job->is_remote ? 'Remote' : $job->location->name }}
-                        </div>
-                        <div class="item">
-                            <i class="red calendar icon"></i>
-                            {{ $job->created_at->diffForHumans() }}
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            
             <div class="ui unstackable items">
                 <div class="item">
                     <a class="ui tiny image" href="{{ url($job->creator->path()) }}">

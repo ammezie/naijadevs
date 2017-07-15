@@ -9,8 +9,8 @@
 @section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
 
 @section('content')
-    <div class="ui grid container">
-        <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
+    <div class="ui stackable grid container">
+        <div class="twelve wide column">
             
             @include('partials._filters')
 
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
+        <div class="four wide column">
             @include('partials._sidebar')
         </div>
     </div>
