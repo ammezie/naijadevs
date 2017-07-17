@@ -78,7 +78,7 @@
                         <div class="field{{ $errors->has('company_name') ? ' error' : '' }}">
                             <label>Company Logo</label>
                             @if (auth()->user()->company_logo)
-                                <img class="ui image" src="{{ asset(auth()->user()->company_logo) }}" alt="current logo">
+                                <img class="ui image" src="{{ asset('storage/' . auth()->user()->company_logo) }}" alt="company logo">
                             @endif
                             <input
                                 type="file"
