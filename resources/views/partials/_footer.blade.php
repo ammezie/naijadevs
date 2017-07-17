@@ -27,8 +27,8 @@
                 <div class="item">
                     © Naijadevs 2017. All Rights Reserved.
                 </div>
-                <a class="item" href="#">About</a>
-                <a class="item" href="#">Pricing</a>
+                <a class="item" href="{{ url('/about') }}">About</a>
+                <a class="item" href="{{ url('/pricing') }}">Pricing</a>
             </div>
         </div>
         <div class="five wide column">
