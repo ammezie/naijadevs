@@ -14,18 +14,18 @@
     <meta property="og:url" content="@yield('og-url')">
     <meta property="og:description" content="@yield('og-description')">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="{{ asset('images/og_image.png') }}">
+    <meta property="og:image" content="{{ asset('images/og_image.jpg') }}">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
     <meta property="og:site_name" content="Naijadevs">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@naijadevs_ng">
     <meta name="twitter:title" content="@yield('twitter-title')">
     <meta name="twitter:description" content="@yield('twitter-description')">
-    <meta name="twitter:image" content="{{ asset('images/tc_image.png') }}">
+    <meta name="twitter:image" content="{{ asset('images/tc_image.jpg') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
