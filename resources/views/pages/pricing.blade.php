@@ -11,5 +11,7 @@
 @section('content')
     <div class="ui container">
         <h1 class="ui header">Pricing</h1>
+
+        <p>Posting jobs on Naijadevs is <strong>TOTALLY FREE</strong> (while still in Beta).</p>
     </div>
 @endsection
