@@ -36,12 +36,12 @@
                 <a class="ui circular twitter icon button" href="https://twitter.com/naijadevs_ng" target="_blank">
                   <i class="twitter icon"></i>
                 </a>
-                <a class="ui circular facebook icon button" href="https://facebook.com/naijadevs_ng" target="_blank">
+                <a class="ui circular facebook icon button" href="https://facebook.com/naijadevs" target="_blank">
                   <i class="facebook f icon"></i>
                 </a>
-                <a class="ui circular linkedin icon button" href="https://linkedin.com/naijadevs_ng" target="_blank">
+                {{-- <a class="ui circular linkedin icon button" href="https://linkedin.com/company-beta/11207772" target="_blank">
                   <i class="linkedin icon"></i>
-                </a>
+                </a> --}}
             </div>
         </div>
         <div class="five wide column">
