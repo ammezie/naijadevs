@@ -21,34 +21,34 @@ __webpack_require__(31);
 Vue.component('newsletter-form', __webpack_require__(32));
 
 var app = new Vue({
-    el: '#app',
+  el: '#app',
 
-    data: {},
+  data: {},
 
-    methods: {}
+  methods: {}
 });
 
 // Toggle mobile nav menu
-document.addEventListener('DOMContentLoaded', function () {
-    // Get all "navbar-burger" elements
-    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Get all "navbar-burger" elements
+//     var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-    // Check if there are any nav burgers
-    if ($navbarBurgers.length > 0) {
-        // Add a click event on each of them
-        $navbarBurgers.forEach(function ($el) {
-            $el.addEventListener('click', function () {
-                // Get the target from the "data-target" attribute
-                var target = $el.dataset.target;
-                var $target = document.getElementById(target);
+//     // Check if there are any nav burgers
+//     if ($navbarBurgers.length > 0) {
+//         // Add a click event on each of them
+//         $navbarBurgers.forEach(function ($el) {
+//             $el.addEventListener('click', () => {
+//                 // Get the target from the "data-target" attribute
+//                 var target = $el.dataset.target;
+//                 var $target = document.getElementById(target);
 
-                // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-                $el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-            });
-        });
-    }
-});
+//                 // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+//                 $el.classList.toggle('is-active');
+//                 $target.classList.toggle('is-active');
+//             });
+//         });
+//     }
+// });
 
 /***/ }),
 

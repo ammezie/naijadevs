@@ -11,5 +11,5 @@
     <p>
         Get to know about new jobs as they are posted, we post them on Twiiter.
     </p>
-    <a href="https://twitter.com/naijadevs_ng" class="twitter-follow-button" data-lang="en" data-show-count="false">Follow @naijadevs_ng</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a href="https://twitter.com/naijadevs_ng" class="twitter-follow-button" data-lang="en" data-show-count="false">Follow @naijadevs_ng</a>
 </div>
