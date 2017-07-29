@@ -9,7 +9,7 @@
 @section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
 
 @section('content')
-    <div class="ui container">
+    <div class="ui container" style="padding-top: 50px; padding-bottom: 50px">
         <h1 class="ui header">Pricing</h1>
 
         <p>Posting jobs on Naijadevs is <strong>TOTALLY FREE</strong> (while still in Beta).</p>

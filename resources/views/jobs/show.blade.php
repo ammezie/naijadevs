@@ -12,7 +12,7 @@
 @section('twitter-description', str_limit($job->description, 160))
 
 @section('content')
-    <div class="ui stackable grid container">
+    <div class="ui stackable grid container" style="padding-top: 50px; padding-bottom: 50px">
         <div class="twelve wide column">
             <div class="ui unstackable items">
                 <div class="item">

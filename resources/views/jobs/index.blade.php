@@ -9,15 +9,17 @@
 @section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
 
 @section('content')
-    <div class="ui stackable grid container">
-        <div class="twelve wide column">
+    @include('partials._hero')
+
+    <div class="ui stackable grid container" style="padding-top: 50px; padding-bottom: 50px">
+        <div class="twelve wide column" id="jobs">
             
             @include('partials._filters')
 
             <div class="ui divider"></div>
 
             @if ($jobs->isEmpty())
-                <p>Sorry!!! There are currently no open jobs.</p>
+                <p>Whoops!!! There are currently no open jobs.</p>
             @else
                 <div class="ui unstackable divided relaxed items">
                     @foreach ($jobs as $job)

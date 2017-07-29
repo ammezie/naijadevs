@@ -13,7 +13,7 @@
 @endpush
 
 @section('content')
-    <div class="ui stackable two column centered grid container">
+    <div class="ui stackable two column centered grid container" style="padding-top: 50px; padding-bottom: 50px">
         <div class="column">
             <h3 class="ui dividing header">
                 Post a Job

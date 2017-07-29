@@ -9,7 +9,7 @@
 @section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
 
 @section('content')
-    <div class="ui stackable mobile reversed grid container">
+    <div class="ui stackable mobile reversed grid container" style="padding-top: 50px; padding-bottom: 50px">
         <div class="four wide column">
             @include('users.partials._user_nav')
         </div>

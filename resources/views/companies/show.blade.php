@@ -12,7 +12,7 @@
 @section('twitter-description', str_limit($company->company_about, 160))
 
 @section('content')
-    <div class="ui container">
+    <div class="ui container" style="padding-top: 50px; padding-bottom: 50px">
         <div class="ui basic segment">
             <div class="ui items">
                 <div class="item">

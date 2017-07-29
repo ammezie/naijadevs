@@ -9,7 +9,7 @@
 @section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
 
 @section('content')
-    <div class="ui stackable three column centered grid container">
+    <div class="ui stackable three column centered grid container" style="padding-top: 50px; padding-bottom: 50px">
         <div class="column">
             <h3 class="ui horizontal divider header">LOG IN</h3>
 

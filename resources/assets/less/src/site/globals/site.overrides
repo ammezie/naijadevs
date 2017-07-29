@@ -1,3 +1,46 @@
 /*******************************
          Site Overrides
 *******************************/
+
+._main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+nav.ui.menu {
+    margin-bottom: 0;
+}
+
+.main > .segment.hero {
+    background: rgba(0,176,179,1);
+    background: -moz-linear-gradient(left, rgba(0,176,179,1) 0%, rgba(0,177,179,0.76) 54%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,176,179,1)), color-stop(54%, rgba(0,177,179,0.76)));
+    background: -webkit-linear-gradient(left, rgba(0,176,179,1) 0%, rgba(0,177,179,0.76) 54%);
+    background: -o-linear-gradient(left, rgba(0,176,179,1) 0%, rgba(0,177,179,0.76) 54%);
+    background: -ms-linear-gradient(left, rgba(0,176,179,1) 0%, rgba(0,177,179,0.76) 54%);
+    background: linear-gradient(to right, rgba(0,176,179,1) 0%, rgba(0,177,179,0.76) 54%);
+    color: #ffffff;
+    border-radius: 0;
+    border: none;
+    padding: 5em;
+}
+.main > .segment.hero > h1.ui.header {
+    font-size: 2.5rem;
+}
+
+.main > .segment.hero > p {
+    font-size: 1.1rem;
+}
+
+.cta {
+    padding-top: 20px;
+}
+
+.main > .segment.hero > .ui.secondary.button {
+    
+    border: 1px solid #808080;
+}
+
+.main > .segment.hero > .ui.primary.button {
+    border: 1px solid #00B1B3;
+}
