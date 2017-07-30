@@ -54,3 +54,9 @@ a.ui.outline.button:hover {
 .m_5 {
     margin: 5px !important;
 }
+
+@media only screen and (max-width: @largestMobileScreen) {
+    .computer-listing {
+        display: none !important;
+    }
+}

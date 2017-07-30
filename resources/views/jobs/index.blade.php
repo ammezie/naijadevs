@@ -39,16 +39,18 @@
                                         <i class="red {{ $job->is_remote ? 'world' : 'marker' }} icon"></i>
                                         {{ $job->is_remote ? 'Remote' : $job->location->name }}
                                     </span>
-                                    <span class="ui right floated category">
-                                        <div class="ui basic {{ $job->category->color }} label">
-                                            {{ $job->category->name }}
-                                        </div>
-                                    </span>
-                                    <span class="ui right floated type">
-                                        <div class="ui basic {{ $job->type->color }} label">
-                                            {{ $job->type->name }}
-                                        </div>
-                                    </span>
+                                    <div class="computer-listing">
+                                        <span class="ui right floated category">
+                                            <div class="ui basic {{ $job->category->color }} label">
+                                                {{ $job->category->name }}
+                                            </div>
+                                        </span>
+                                        <span class="ui right floated type">
+                                            <div class="ui basic {{ $job->type->color }} label">
+                                                {{ $job->type->name }}
+                                            </div>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="extra">
                                     <span class="date">
