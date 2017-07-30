@@ -5,7 +5,7 @@
     </p>
 
     <div class="cta">
-        <a class="ui secondary button" href="#jobs">Browse Jobs</a>
-        <a class="ui primary button" href="{{ route('post_job') }}">Post a Job</a>
+        <a class="ui secondary button m_5" href="#jobs">Browse Jobs</a>
+        <a class="ui primary button m_5" href="{{ route('post_job') }}">Post a Job</a>
     </div>
 </div>

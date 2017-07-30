@@ -37,10 +37,13 @@ nav.ui.menu {
 }
 
 .main > .segment.hero > .ui.secondary.button {
-    
     border: 1px solid #808080;
 }
 
 .main > .segment.hero > .ui.primary.button {
     border: 1px solid #00B1B3;
+}
+
+.m_5 {
+    margin: 5px !important;
 }
