@@ -36,8 +36,15 @@ nav.ui.menu {
     padding-top: 20px;
 }
 
-.main > .segment.hero > .ui.secondary.button {
-    border: 1px solid #808080;
+a.ui.outline.button {
+    background-color: transparent !important;
+    border: 1px solid #ffffff !important;
+    color: #ffffff;
+}
+
+a.ui.outline.button:hover {
+    background-color: rgba(144,144,144, 0.6) !important;
+    border: 1px solid transparent !important;
 }
 
 .main > .segment.hero > .ui.primary.button {
