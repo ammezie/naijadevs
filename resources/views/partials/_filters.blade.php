@@ -2,7 +2,7 @@
     <div class="four fields">
         <div class="field">
             <div class="ui selection dropdown">
-                <input type="hidden" name="category">
+                <input type="hidden" name="category" value="{{ request()->category }}">
                 <i class="dropdown icon"></i>
                 <div class="default text">Filter by job category</div>
                 <div class="menu">
@@ -14,7 +14,7 @@
         </div>
         <div class="field">
             <div class="ui selection dropdown">
-                <input type="hidden" name="type">
+                <input type="hidden" name="type" value="{{ request()->type }}">
                 <i class="dropdown icon"></i>
                 <div class="default text">Filter by job type</div>
                 <div class="menu">
@@ -26,7 +26,7 @@
         </div>
         <div class="field" id="location">
             <div class="ui search selection dropdown">
-                <input type="hidden" name="location">
+                <input type="hidden" name="location" value="{{ request()->location }}">
                 <i class="dropdown icon"></i>
                 <div class="default text">Filter by job location</div>
                 <div class="menu">
@@ -43,7 +43,7 @@
                     id="is_remote"
                     name="is_remote"
                     value="true"
-                    {{ old('is_remote') ? 'checked' : '' }}
+                    {{ request()->is_remote ? 'checked' : '' }}
                     tabindex="0">
                 <label for="is_remote">Remote</label>
             </div>
