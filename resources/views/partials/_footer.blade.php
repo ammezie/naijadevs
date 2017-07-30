@@ -29,6 +29,8 @@
                 </div>
                 <a class="item" href="{{ url('/about') }}">About</a>
                 <a class="item" href="{{ url('/pricing') }}">Pricing</a>
+                {{-- <a class="item" href="{{ url('/privacy-policy') }}">Privacy Policy</a> --}}
+                {{-- <a class="item" href="{{ url('/terms-of-use') }}">Terms of Use</a> --}}
             </div>
         </div>
         <div class="five wide column">
