@@ -13,8 +13,8 @@
 @endpush
 
 @section('content')
-    <div class="ui stackable two column centered grid container" style="padding-top: 50px; padding-bottom: 50px">
-        <div class="column">
+    <div class="ui stackable grid container" style="padding-top: 50px; padding-bottom: 50px">
+        <div class="twelve wide column">
             <h3 class="ui dividing header">
                 Post a Job
                 <div class="sub header">Be descriptive as possible with your job.</div>
@@ -174,6 +174,27 @@
               
                 <button type="submit" class="ui primary button">Post Job</button>                
             </form>
+        </div>
+
+        <div class="four wide column">
+            <div class="ui segments">
+                <div class="ui segment">
+                    <h4 class="ui header">How does it works?</h4>
+                    <p>
+                        Posting a job is <strong>TOTALLY FREE</strong> (while in Beta), your job posting will be open for 60 days after which it will automatically expire (that's if you don't close it first).
+                    </p>
+                    <p>
+                        <em>You are limited to one job per posting.</em>
+                    </p>
+                </div>
+
+                <div class="ui segment">
+                    <h4 class="ui header">Why post on Naijadevs?</h4>
+                    <p>
+                        The best way to reach the fast growing community of talented Nigerian developers and designers.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
