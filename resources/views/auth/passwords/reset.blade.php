@@ -3,7 +3,7 @@
 @section('title', 'Reset Password')
 @section('meta-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them.')
 @section('og-title', 'Reset password on Naijadevs')
-@section('og-url', route('password.reset'))
+@section('og-url', route('password.reset', $token))
 @section('og-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
 @section('twitter-title', 'Reset password on Naijadevs')
 @section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
