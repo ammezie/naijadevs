@@ -179,6 +179,7 @@ return [
         Indal\Markdown\MarkdownServiceProvider::class,
         App\Repositories\Newsletters\NewslettersServiceProvider::class,
         App\Repositories\Notifications\NotificationsServiceProvider::class,
+        Spatie\Sitemap\SitemapServiceProvider::class,
 
     ],
 
