@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class WelcomeToNaijadevs extends Mailable implements ShouldQueue
+class WelcomeToNaijadevs extends Mailable
 {
     public $user;
 
