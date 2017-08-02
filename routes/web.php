@@ -43,3 +43,13 @@ Route::group(['prefix' => 'settings'], function () {
     Route::get('/company', 'UsersController@showCompanyEditForm');
     Route::patch('/company', 'UsersController@updateCompany')->name('update_company');
 });
+
+// Admin-ish
+Route::prefix('console')
+    ->namespace('Admin')
+    ->middleware(['auth', 'admin'])
+    ->group(function () {
+        Route::get('/', function () {
+            return 'here';
+        });
+    });
