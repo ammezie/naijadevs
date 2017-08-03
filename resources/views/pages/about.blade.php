@@ -15,5 +15,10 @@
         <p>
             Naijadevs is a job board that connects talented Nigerian developers and designers with companies who need them.
         </p>
+
+        <h2>Get In Touch</h2>
+        <p>
+            You can get in touch with us by shooting an email to <a href="mailto:hello@naijadevs.ng">hello@naijadevs.ng</a>, and we will get back to you not later than 48 hours from time of receipt.
+        </p>
     </div>
 @endsection

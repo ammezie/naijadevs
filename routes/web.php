@@ -16,7 +16,7 @@ Auth::routes();
 Route::get('/about', 'PagesController@about');
 Route::get('/pricing', 'PagesController@pricing');
 Route::get('/privacy-policy', 'PagesController@privacyPolicy');
-Route::get('/terms-of-use', 'PagesController@termsOfUse');
+Route::get('/terms', 'PagesController@termsOfUse');
 
 // Jobs
 Route::get('/', 'JobsController@index')->name('home');
