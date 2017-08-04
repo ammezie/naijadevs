@@ -23,7 +23,7 @@
                     @foreach ($jobs as $job)
                         <div class="item">
                             <div class="ui tiny image">
-                                <img src="{{ $job->creator->company_logo ? asset($job->creator->company_logo) : asset('images/company_logo.png') }}">
+                                <img src="{{ $job->creator->company_logo ? asset('storage/' . $job->creator->company_logo) : asset('images/company_logo.png') }}">
                             </div>
                             <div class="content">
                                 <a class="header" href="{{ url($job->path()) }}">

@@ -17,7 +17,7 @@
             <div class="ui unstackable items">
                 <div class="item">
                     <a class="ui tiny image" href="{{ url($job->creator->path()) }}">
-                        <img src="{{ $job->creator->company_logo ? asset($job->creator->company_logo) : asset('images/company_logo.png') }}">
+                        <img src="{{ $job->creator->company_logo ? asset('storage/' . $job->creator->company_logo) : asset('images/company_logo.png') }}">
                     </a>
                     <div class="content">
                         <h2 class="ui header">
@@ -90,7 +90,7 @@
             <div class="ui fluid card">
                 @if (! is_null($job->creator->company_logo))
                 <div class="ui image">
-                    <img src="{{ asset($job->creator->company_logo) }}">
+                    <img src="{{ asset('storage/' . $job->creator->company_logo) }}">
                 </div>
                 @endif
                 <div class="center aligned content">

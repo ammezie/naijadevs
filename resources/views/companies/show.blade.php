@@ -18,7 +18,7 @@
                 <div class="item">
                     @if (! is_null($company->company_logo))
                         <div class="ui small image">
-                            <img src="{{ asset($company->company_logo) }}" alt="Company Logo">
+                            <img src="{{ asset('storage/' . $company->company_logo) }}" alt="Company Logo">
                         </div>
                     @endif
                     <div class="content">
