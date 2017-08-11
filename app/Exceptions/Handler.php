@@ -8,8 +8,6 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
-    private $sentryID;
-
     /**
      * A list of the exception types that should not be reported.
      *
@@ -60,12 +58,6 @@ class Handler extends ExceptionHandler
             }
 
             return redirect()->route('home');
-        }
-
-        if ($exception instanceof \ErrorException) {
-            return response()->view('errors.500', [
-                'sentryID' => $this->sentryID,
-            ], 500);
         }
 
         return parent::render($request, $exception);
