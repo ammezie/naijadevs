@@ -8,6 +8,8 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
+    private $sentryID;
+
     /**
      * A list of the exception types that should not be reported.
      *
@@ -32,6 +34,10 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        if ($this->shouldReport($e)) {
+            app('sentry')->captureException($e);
+        }
+
         parent::report($exception);
     }
 
@@ -44,7 +50,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if (app()->environment() === 'testing') throw $exception;
+        if (app()->environment() === 'testing') {
+            throw $exception;
+        }
 
         if ($exception instanceof \Illuminate\Auth\Access\AuthorizationException) {
             if ($request->expectsJson()) {
@@ -52,6 +60,12 @@ class Handler extends ExceptionHandler
             }
 
             return redirect()->route('home');
+        }
+
+        if ($exception instanceof \ErrorException) {
+            return response()->view('errors.500', [
+                'sentryID' => $this->sentryID,
+            ], 500);
         }
 
         return parent::render($request, $exception);
