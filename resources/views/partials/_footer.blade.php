@@ -25,7 +25,7 @@
         <div class="six wide column">
             <div class="ui small horizontal list">
                 <div class="item">
-                    © Naijadevs 2017. All Rights Reserved.
+                    © 2017 Naijadevs. All Rights Reserved.
                 </div>
             </div>
         </div>

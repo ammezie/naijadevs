@@ -45,11 +45,9 @@ Route::group(['prefix' => 'settings'], function () {
 });
 
 // Admin-ish
-Route::prefix('console')
+Route::prefix('azu')
     ->namespace('Admin')
     ->middleware(['auth', 'admin'])
     ->group(function () {
-        Route::get('/', function () {
-            return 'here';
-        });
+        Route::get('/', 'AdminController@dashboard')->name('admin.dashboard');
     });
