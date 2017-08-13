@@ -43,14 +43,11 @@
             </div>
         </div>
         <div class="five wide column">
-            {{-- <p class="hosted" style="text-align: right; font-size: 0.92857143rem">
-                Proudly hosted with <a href="https://m.do.co/c/98e35d32e849">DigitalOcean</a>
-            </p> --}}
             <div class="ui small right floated horizontal list">
                 <a class="item" href="{{ url('/about') }}">About</a>
                 <a class="item" href="{{ url('/pricing') }}">Pricing</a>
-                {{-- <a class="item" href="{{ url('/terms') }}">Terms of Use</a> --}}
-                {{-- <a class="item" href="{{ url('/privacy-policy') }}">Privacy Policy</a> --}}
+                <a class="item" href="{{ url('/terms') }}">Terms</a>
+                <a class="item" href="{{ url('/privacy') }}">Privacy</a>
             </div>
         </div>
     </div>

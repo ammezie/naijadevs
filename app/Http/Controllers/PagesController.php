@@ -9,7 +9,7 @@ class PagesController extends Controller
     /**
      * About page
      *
-     * @return [type] [description]
+     * @return Response
      */
     public function about()
     {
@@ -19,10 +19,29 @@ class PagesController extends Controller
     /**
      * Pricing page
      *
-     * @return [type] [description]
+     * @return Response
      */
     public function pricing()
     {
         return view('pages.pricing');
+    }
+
+    /**
+     * Terms page
+     *
+     * @return Response
+     */
+    public function terms()
+    {
+        return view('pages.terms');
+    }
+
+    /**
+     * Privacy page
+     * @return Response
+     */
+    public function privacy()
+    {
+        return view('pages.privacy');
     }
 }
