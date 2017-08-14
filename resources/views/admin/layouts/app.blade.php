@@ -11,6 +11,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Naijadevs connects talented Nigerian developers and designers with companies who needs them." name="description" />
     <meta content="Chimezie Enyinnaya" name="author" />
+    <meta name="robots" content="noindex,nofollow>
     
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/assets/global/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
