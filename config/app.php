@@ -181,6 +181,7 @@ return [
         App\Repositories\Notifications\NotificationsServiceProvider::class,
         Spatie\Sitemap\SitemapServiceProvider::class,
         Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
+        Thujohn\Twitter\TwitterServiceProvider::class,
 
     ],
 
@@ -232,6 +233,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Markdown' => Indal\Markdown\Facade::class,
         'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
+        'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
 
     ],
 

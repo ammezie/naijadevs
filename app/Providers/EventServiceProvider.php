@@ -15,6 +15,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'App\Events\JobCreated' => [
             'App\Listeners\SendJobPostedNotification',
+            'App\Listeners\TweetPostedJob',
         ],
     ];
 

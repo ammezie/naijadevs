@@ -66,7 +66,7 @@ class JobsController extends Controller
             'closes_at' => Carbon::now()->addDays(60),
         ];
 
-        // Create job and fire event
+        // Post job and fire event
         event(new JobCreated($job = Job::createJob($attributes)));
 
         return redirect($job->path());
