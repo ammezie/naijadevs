@@ -125,12 +125,28 @@ class JobsController extends Controller
             'location_id' => $request->is_remote ? null : $request->location_id,
             'salary' => $request->salary,
             'is_remote' => $request->has('is_remote') ?? 0,
-            'is_closed' => $request->has('is_closed') ?? 0,
         ];
 
         $job->updateJob($attributes);
 
         return redirect('/my-jobs')->with('success', 'Job updated!');
+    }
+
+    /**
+     * Close the specified job
+     *
+     * @param  Job   $job
+     * @return Response
+     */
+    public function close(Job $job)
+    {
+        // Can the currently authenticated user edit this job
+        $this->authorize('update', $job);
+
+        $job->is_closed = 1;
+        $job->save();
+
+        return back()->with('success', 'Job closed!');
     }
 
     /**

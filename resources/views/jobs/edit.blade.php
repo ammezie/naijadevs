@@ -177,7 +177,7 @@
                     </div>
                 </div>
 
-                <div class="field">
+                {{-- <div class="field">
                     <div class="ui checkbox">
                         <input
                             type="checkbox"
@@ -192,7 +192,7 @@
                             tabindex="0">
                         <label for="is_closed">Mark job as closed</label>
                     </div>
-                </div>
+                </div> --}}
               
                 <button type="submit" class="ui primary button">Update Job</button>                
             </form>

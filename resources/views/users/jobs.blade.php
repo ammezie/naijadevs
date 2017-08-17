@@ -55,6 +55,15 @@
                                     </span>
                                     @if (!$job->isClosed() && !$job->hasPassedDuration())
                                         <span class="ui right floated">
+                                            <a class="ui label"
+                                                href="{{ route('close_job', $job->id) }}"
+                                                data-method="patch"
+                                                data-token="{{ csrf_token() }}"
+                                                data-confirm="Are you sure you want to close this job? Devs won't be able to apply to it if you proceed.">
+                                                Close Job
+                                            </a>
+                                        </span>
+                                        <span class="ui right floated">
                                             <a class="ui label" href="{{ url('/jobs/' . $job->id .'/edit') }}">
                                                 <i class="edit icon"></i>
                                                 Edit Job
@@ -81,3 +90,7 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/delete.js') }}"></script>
+@endpush

@@ -25,6 +25,7 @@ Route::get('/post-job', 'JobsController@create')->name('post_job');
 Route::post('/jobs', 'JobsController@store');
 Route::get('/jobs/{job}/edit', 'JobsController@edit');
 Route::patch('/jobs/{job}', 'JobsController@update');
+Route::patch('/jobs/{job}/close', 'JobsController@close')->name('close_job');
 Route::get('/jobs/{job}/{title?}', 'JobsController@show');
 Route::get('/filters', 'JobsController@filterJobs');
 
