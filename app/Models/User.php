@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -83,6 +84,9 @@ class User extends Authenticatable
      */
     public function getCompanyJobs()
     {
-        return $this->jobs()->where('is_closed', 0)->with('location', 'type', 'category');
+        return $this->jobs()
+                    ->where('is_closed', 0)
+                    ->whereDate('closes_at', '>', Carbon::now())
+                    ->with('location', 'type', 'category');
     }
 }
