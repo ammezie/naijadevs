@@ -6,8 +6,8 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Titillium Web';
-@fontNameWithPlus  : 'Titillium+Web';
+@fontName          : 'Source Open Sans';
+@fontNameWithPlus  : 'Source+Open+Sans';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
