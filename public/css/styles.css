@@ -33045,6 +33045,10 @@ Floated Menu / Item
     display: none !important;
   }
 }
+nav.ui.menu {
+  border: none !important;
+  border-radius: 0 !important;
+}
 /*!
  * # Semantic UI - Message
  * http://github.com/semantic-org/semantic-ui/

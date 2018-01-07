@@ -16,3 +16,8 @@
         display: none !important;
     }
 }
+
+nav.ui.menu {
+    border: none !important;
+    border-radius: 0 !important;
+}
