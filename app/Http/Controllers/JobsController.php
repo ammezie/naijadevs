@@ -62,7 +62,7 @@ class JobsController extends Controller
             'category_id' => $request->category_id,
             'location_id' => $request->is_remote ? null : $request->location_id,
             'salary' => $request->salary,
-            'is_remote' => $request->has('is_remote') ?? 0,
+            'is_remote' => $request->filled('is_remote') ?? 0,
             'closes_at' => Carbon::now()->addDays(60),
         ];
 
@@ -112,7 +112,7 @@ class JobsController extends Controller
     {
         // Can the currently authenticated user edit this job
         $this->authorize('update', $job);
-        
+
         $attributes = [
             'title' => $request->title,
             'description' => $request->description,
@@ -124,7 +124,7 @@ class JobsController extends Controller
             'category_id' => $request->category_id,
             'location_id' => $request->is_remote ? null : $request->location_id,
             'salary' => $request->salary,
-            'is_remote' => $request->has('is_remote') ?? 0,
+            'is_remote' => $request->filled('is_remote') ?? 0,
         ];
 
         $job->updateJob($attributes);
@@ -162,25 +162,25 @@ class JobsController extends Controller
                             ->where('closes_at', '>', Carbon::now())
                             ->latest();
 
-        if ($request->has('category')) {
+        if ($request->filled('category')) {
             $category = Category::where('slug', $request->category)->firstOrFail();
 
             $jobQuery->where('category_id', $category->id);
         }
 
-        if ($request->has('type')) {
+        if ($request->filled('type')) {
             $type = JobType::where('slug', $request->type)->firstOrFail();
 
             $jobQuery->where('type_id', $type->id);
         }
 
-        if ($request->has('location')) {
+        if ($request->filled('location')) {
             $location = Location::where('slug', $request->location)->firstOrFail();
 
             $jobQuery->where('location_id', $location->id);
         }
 
-        if ($request->has('is_remote')) {
+        if ($request->filled('is_remote')) {
             $jobQuery->where('is_remote', 1);
         }
 
