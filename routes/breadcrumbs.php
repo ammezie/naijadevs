@@ -5,12 +5,8 @@ Breadcrumbs::register('dashboard', function ($breadcrumbs) {
     $breadcrumbs->push('Dashboard', route('admin.dashboard'));
 });
 
-// Admin - Users
-Breadcrumbs::register('dashboard', function ($breadcrumbs) {
-    $breadcrumbs->push('Users', route('admin.dashboard'));
-});
-
-// Admin - jobs
-Breadcrumbs::register('dashboard', function ($breadcrumbs) {
-    $breadcrumbs->push('Jobs', route('admin.dashboard'));
+// Admin - job categories
+Breadcrumbs::register('categories', function ($breadcrumbs) {
+    $breadcrumbs->parent('dashboard');
+    $breadcrumbs->push('Categories', route('categories.index'));
 });

@@ -5,30 +5,63 @@
                 <span></span>
             </div>
         </li>
-        <li class="nav-item start ">
+        <li class="nav-item start">
             <a href="{{ route('admin.dashboard') }}" class="nav-link">
                 <i class="icon-home"></i>
                 <span class="title">Dashboard</span>
             </a>
         </li>
+        {{--  <li class="nav-item start">
+            <a href="{{ route('admin.users') }}" class="nav-link">
+                <i class="icon-users"></i>
+                <span class="title">Users</span>
+            </a>
+        </li>
+        <li class="nav-item start">
+            <a href="{{ route('admin.jobs') }}" class="nav-link">
+                <i class="icon-list"></i>
+                <span class="title">Jobs</span>
+            </a>
+        </li>  --}}
         <li class="nav-item">
             <a href="javascript:;" class="nav-link nav-toggle">
-                <i class="icon-diamond"></i>
-                <span class="title">UI Features</span>
+                <i class="icon-list"></i>
+                <span class="title">Categories</span>
                 <span class="arrow"></span>
             </a>
             <ul class="sub-menu">
-                <li class="nav-item  ">
-                    <a href="ui_metronic_grid.html" class="nav-link ">
-                        <span class="title">Metronic Grid System</span>
+                <li class="nav-item start">
+                    <a href="{{ route('categories.create') }}" class="nav-link">
+                        <span class="title">Add Category</span>
                     </a>
                 </li>
-                <li class="nav-item  ">
-                    <a href="ui_confirmations.html" class="nav-link ">
-                        <span class="title">Popover Confirmations</span>
+                <li class="nav-item start">
+                    <a href="{{ route('categories.index') }}" class="nav-link">
+                        <span class="title">Categories</span>
                     </a>
                 </li>
             </ul>
         </li>
+        {{--  <li class="nav-item">
+            <a href="javascript:;" class="nav-link nav-toggle">
+                <i class="icon-layers"></i>
+                <span class="title">Types</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item start">
+                    <a href="{{ route('admin.types.create') }}" class="nav-link">
+                        <i class="icon-doc"></i>
+                        <span class="title">Add Type</span>
+                    </a>
+                </li>
+                <li class="nav-item start">
+                    <a href="{{ route('admin.types') }}" class="nav-link">
+                        <i class="icon-list"></i>
+                        <span class="title">Types</span>
+                    </a>
+                </li>
+            </ul>
+        </li>  --}}
     </ul>
 </div>

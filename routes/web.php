@@ -51,4 +51,5 @@ Route::prefix('azu')
     ->middleware(['auth', 'admin'])
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+        Route::resource('categories', 'JobCategoriesController', ['except' => ['show']]);
     });
