@@ -33,7 +33,7 @@
                                     <td>{{ $category->slug }}</td>
                                     <td>{{ $category->color }}</td>
                                     <td>
-                                        <a href="">
+                                        <a href="{{ route('categories.edit', $category->id) }}">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     </td>

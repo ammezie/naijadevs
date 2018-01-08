@@ -16,3 +16,9 @@ Breadcrumbs::register('categories.create', function ($breadcrumbs) {
     $breadcrumbs->parent('categories.index');
     $breadcrumbs->push('Add Category', route('categories.create'));
 });
+
+// Admin - edit job category
+Breadcrumbs::register('categories.edit', function ($breadcrumbs, $category) {
+    $breadcrumbs->parent('categories.index');
+    $breadcrumbs->push('Edit Category', route('categories.edit', $category->id));
+});

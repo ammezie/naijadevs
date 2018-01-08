@@ -60,24 +60,37 @@ class JobCategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        // validate form data
+        $vaildatedData = $request->validate([
+            'name' => 'required',
+            'color' => 'required'
+        ]);
+
+        $category->name = $vaildatedData['name'];
+        $category->slug = str_slug($vaildatedData['name']);
+        $category->color = $vaildatedData['color'];
+
+        // persist to database
+        $category->save();
+
+        return redirect()->route('categories.index')->with('success', 'Category updated!');
     }
 
     /**
