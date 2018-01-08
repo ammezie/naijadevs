@@ -11,6 +11,7 @@
         "php": ">=5.6.4",
         "andreasindal/laravel-markdown": "^2.0",
         "barryvdh/laravel-debugbar": "~2.4",
+        "davejamesmiller/laravel-breadcrumbs": "^4.2",
         "drewm/mailchimp-api": "^2.4",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.5.*",

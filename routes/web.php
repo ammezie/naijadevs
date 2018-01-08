@@ -50,5 +50,5 @@ Route::prefix('azu')
     ->namespace('Admin')
     ->middleware(['auth', 'admin'])
     ->group(function () {
-        Route::get('/', 'AdminController@dashboard')->name('admin.dashboard');
+        Route::get('/', 'DashboardController@index')->name('admin.dashboard');
     });
