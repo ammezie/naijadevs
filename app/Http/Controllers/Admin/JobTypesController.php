@@ -28,7 +28,7 @@ class JobTypesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.types.create');
     }
 
     /**
@@ -39,7 +39,22 @@ class JobTypesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate form data
+        $vaildatedData = $request->validate([
+            'name' => 'required',
+            'color' => 'required'
+        ]);
+
+        $type = new JobType;
+
+        $type->name = $vaildatedData['name'];
+        $type->slug = str_slug($vaildatedData['name']);
+        $type->color = $vaildatedData['color'];
+
+        // persist to database
+        $type->save();
+
+        return redirect()->route('types.index')->with('success', 'Type added!');
     }
 
     /**
