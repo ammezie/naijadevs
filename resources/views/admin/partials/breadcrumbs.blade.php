@@ -5,13 +5,17 @@
             @foreach ($breadcrumbs as $breadcrumb)
 
                 @if ($breadcrumb->url && !$loop->last)
-                    <li class="breadcrumb-item"><a href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a></li>
+                    <li>
+                        <a href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
                 @else
-                    <li class="breadcrumb-item active">{{ $breadcrumb->title }}</li>
+                    <li>
+                        <span>{{ $breadcrumb->title }}</span>
+                    </li>
                 @endif
 
             @endforeach
         </ul>
     </div>
-
 @endif

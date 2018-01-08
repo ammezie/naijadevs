@@ -27,7 +27,7 @@ class JobCategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -38,7 +38,22 @@ class JobCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate form data
+        $vaildatedData = $request->validate([
+            'name' => 'required',
+            'color' => 'required'
+        ]);
+
+        $category = new Category;
+
+        $category->name = $vaildatedData['name'];
+        $category->slug = str_slug($vaildatedData['name']);
+        $category->color = $vaildatedData['color'];
+
+        // persist to database
+        $category->save();
+
+        return redirect()->route('categories.index')->with('success', 'Category added!');
     }
 
 

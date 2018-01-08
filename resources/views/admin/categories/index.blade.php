@@ -4,9 +4,11 @@
 
 @section('content')
     <div class="page-content">
-        {{ Breadcrumbs::render('categories') }}
+        {{ Breadcrumbs::render('categories.index') }}
 
         <h1 class="page-title"> Categories</h1>
+
+        @include('admin.includes.flash_success')
 
         <div class="portlet light bordered">
             <div class="portlet-body">
