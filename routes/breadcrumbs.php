@@ -34,3 +34,9 @@ Breadcrumbs::register('types.create', function ($breadcrumbs) {
     $breadcrumbs->parent('types.index');
     $breadcrumbs->push('Add Job Type', route('types.create'));
 });
+
+// Admin - edit job type
+Breadcrumbs::register('types.edit', function ($breadcrumbs, $type) {
+    $breadcrumbs->parent('types.index');
+    $breadcrumbs->push('Edit Job Type', route('types.edit', $type->id));
+});

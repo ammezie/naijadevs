@@ -58,37 +58,39 @@ class JobTypesController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  JobType  $type
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(JobType $type)
     {
-        //
+        return view('admin.types.edit', compact('type'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  JobType  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, JobType $type)
     {
-        //
+         // validate form data
+        $vaildatedData = $request->validate([
+            'name' => 'required',
+            'color' => 'required'
+        ]);
+
+        $type->name = $vaildatedData['name'];
+        $type->slug = str_slug($vaildatedData['name']);
+        $type->color = $vaildatedData['color'];
+
+        // persist to database
+        $type->save();
+
+        return redirect()->route('types.index')->with('success', 'Job type updated!');
     }
 
     /**
