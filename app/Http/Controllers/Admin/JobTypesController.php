@@ -96,11 +96,13 @@ class JobTypesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  JobType  $type
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(JobType $type)
     {
-        //
+        $type->delete();
+
+        return redirect()->back()->with('success', 'Job type deleted!');
     }
 }
