@@ -38,7 +38,14 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="">
+                                        <a
+                                            id="js-delete"
+                                            class="delete"
+                                            href="{{ route('categories.destroy', $category->id) }}"
+                                            title="Delete"
+                                            data-method="delete"
+                                            data-token="{{ csrf_token() }}"
+                                            data-confirm="Are you sure?">
                                             <i class="font-red fa fa-trash-o" ></i>
                                         </a>
                                     </td>
