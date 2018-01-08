@@ -52,4 +52,5 @@ Route::prefix('azu')
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('admin.dashboard');
         Route::resource('categories', 'JobCategoriesController', ['except' => ['show']]);
+        Route::resource('types', 'JobTypesController', ['except' => ['show']]);
     });

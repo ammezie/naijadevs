@@ -26,7 +26,7 @@
         <li class="nav-item">
             <a href="javascript:;" class="nav-link nav-toggle">
                 <i class="icon-list"></i>
-                <span class="title">Categories</span>
+                <span class="title">Job Categories</span>
                 <span class="arrow"></span>
             </a>
             <ul class="sub-menu">
@@ -42,26 +42,24 @@
                 </li>
             </ul>
         </li>
-        {{--  <li class="nav-item">
+        <li class="nav-item">
             <a href="javascript:;" class="nav-link nav-toggle">
-                <i class="icon-layers"></i>
-                <span class="title">Types</span>
+                <i class="icon-list"></i>
+                <span class="title">Job Types</span>
                 <span class="arrow"></span>
             </a>
             <ul class="sub-menu">
                 <li class="nav-item start">
-                    <a href="{{ route('admin.types.create') }}" class="nav-link">
-                        <i class="icon-doc"></i>
+                    <a href="{{ route('types.create') }}" class="nav-link">
                         <span class="title">Add Type</span>
                     </a>
                 </li>
                 <li class="nav-item start">
-                    <a href="{{ route('admin.types') }}" class="nav-link">
-                        <i class="icon-list"></i>
+                    <a href="{{ route('types.index') }}" class="nav-link">
                         <span class="title">Types</span>
                     </a>
                 </li>
             </ul>
-        </li>  --}}
+        </li>
     </ul>
 </div>
