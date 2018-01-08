@@ -6,8 +6,8 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Source Open Sans';
-@fontNameWithPlus  : 'Source+Open+Sans';
+@fontName          : 'Montserrat';
+@fontNameWithPlus  : 'Montserrat';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
