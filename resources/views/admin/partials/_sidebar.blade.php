@@ -11,18 +11,18 @@
                 <span class="title">Dashboard</span>
             </a>
         </li>
-        {{--  <li class="nav-item start">
-            <a href="{{ route('admin.users') }}" class="nav-link">
+        <li class="nav-item start">
+            <a href="{{ route('users.index') }}" class="nav-link">
                 <i class="icon-users"></i>
                 <span class="title">Users</span>
             </a>
         </li>
         <li class="nav-item start">
-            <a href="{{ route('admin.jobs') }}" class="nav-link">
+            <a href="{{ route('jobs.index') }}" class="nav-link">
                 <i class="icon-list"></i>
                 <span class="title">Jobs</span>
             </a>
-        </li>  --}}
+        </li>
         <li class="nav-item">
             <a href="javascript:;" class="nav-link nav-toggle">
                 <i class="icon-list"></i>
