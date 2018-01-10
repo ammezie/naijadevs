@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
-@section('title', 'Connects talented Nigerian developers and designers with companies who needs them')
-@section('meta-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them.')
+@section('title', 'Browse through dozens of developer and designer job openings in Nigeria')
+@section('meta-description', 'Browse through dozens of developer and designer job openings in Nigeria.')
 @section('og-title', 'Naijadevs')
 @section('og-url', url('/'))
-@section('og-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
+@section('og-description', 'Browse through dozens of developer and designer job openings in Nigeria')
 @section('twitter-title', 'Naijadevs')
-@section('twitter-description', 'Naijadevs connects talented Nigerian developers and designers with companies who needs them')
+@section('twitter-description', 'Browse through dozens of developer and designer job openings in Nigeria')
 
 @section('content')
     @include('partials._hero')
 
     <div class="ui stackable grid container" style="padding-top: 50px; padding-bottom: 50px">
         <div class="twelve wide column" id="jobs">
-            
+
             @include('partials._filters')
 
             <div class="ui divider"></div>
