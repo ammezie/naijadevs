@@ -60,3 +60,11 @@ a.ui.outline.button:hover {
         display: none !important;
     }
 }
+
+.footerBar a.item {
+    color: #ffffff !important
+}
+
+.footerBar a.item:hover {
+    color: #ccc !important
+}

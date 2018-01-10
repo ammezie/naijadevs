@@ -6,7 +6,7 @@
                 <p>
                     Want to know when new jobs are posted? You will be notified about new jobs right in your inbox. Don't worry, we hate spam as much as you do.
                 </p>
-                
+
                 <newsletter-form></newsletter-form>
             </div>
             <div class="column">
@@ -21,12 +21,14 @@
 
     <div class="ui divider"></div>
 
-    <div class="ui stackable three column grid container">
+    <div class="ui stackable three column grid container footerBar">
         <div class="six wide column">
             <div class="ui small horizontal list">
-                <div class="item">
-                    © 2017 Naijadevs. All Rights Reserved.
-                </div>
+                <a class="item" href="{{ url('/about') }}">About</a>
+                <a class="item" href="{{ url('/pricing') }}">Pricing</a>
+                <a class="item" href="https://blog.naijadevs.ng">Blog</a>
+                <a class="item" href="{{ url('/terms') }}">Terms</a>
+                <a class="item" href="{{ url('/privacy') }}">Privacy</a>
             </div>
         </div>
         <div class="five wide column">
@@ -43,11 +45,10 @@
             </div>
         </div>
         <div class="five wide column">
-            <div class="ui small right floated horizontal list">
-                <a class="item" href="{{ url('/about') }}">About</a>
-                <a class="item" href="{{ url('/pricing') }}">Pricing</a>
-                <a class="item" href="{{ url('/terms') }}">Terms</a>
-                <a class="item" href="{{ url('/privacy') }}">Privacy</a>
+            <div class="ui small horizontal list">
+                <div class="item">
+                    © 2017 Naijadevs. All Rights Reserved.
+                </div>
             </div>
         </div>
     </div>

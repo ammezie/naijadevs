@@ -100,7 +100,7 @@ str_limit($job->description, 160)) @section('twitter-title', $job->title) @secti
 			<div class="extra content">
 				<div class="ui two buttons">
 					<a href="{{ $job->creator->company_website }}" class="ui basic grey button" target="_blank">
-						Visit
+						Website
 					</a>
 					<a href="{{ url($job->creator->path()) }}" class="ui basic grey button">
 						Jobs
