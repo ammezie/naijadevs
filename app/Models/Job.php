@@ -107,7 +107,7 @@ class Job extends Model
     public static function getOpenJobs()
     {
         return static::where('is_closed', 0)
-                    ->whereDate('closes_at', '>', Carbon::now())
+                    // ->whereDate('closes_at', '>', Carbon::now())
                     ->with('creator', 'type', 'category', 'location');
     }
 
@@ -118,7 +118,7 @@ class Job extends Model
      */
     public function isClosed()
     {
-        return !! $this->is_closed;
+        return !!$this->is_closed;
     }
 
     /**
@@ -128,7 +128,7 @@ class Job extends Model
      */
     public function hasPassedDuration()
     {
-        if (! $this->closes_at) {
+        if (!$this->closes_at) {
             return false;
         }
 

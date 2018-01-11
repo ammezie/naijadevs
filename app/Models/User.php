@@ -86,7 +86,7 @@ class User extends Authenticatable
     {
         return $this->jobs()
                     ->where('is_closed', 0)
-                    ->whereDate('closes_at', '>', Carbon::now())
+                    // ->whereDate('closes_at', '>', Carbon::now())
                     ->with('location', 'type', 'category');
     }
 }
