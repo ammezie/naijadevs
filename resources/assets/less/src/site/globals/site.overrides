@@ -82,3 +82,8 @@ a.ui.outline.button:hover {
     background-color: #00B1B3 !important;
     color: #ffffff !important;
 }
+
+.ui.companyCard.card {
+    border: 1px solid #e8e8e8 !important;
+    box-shadow: none !important;
+}
