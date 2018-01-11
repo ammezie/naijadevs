@@ -13,7 +13,7 @@
 
 @section('content')
     <div class="ui container" style="padding-top: 50px; padding-bottom: 50px">
-        <div class="ui basic segment">
+        <div class="ui basic segment padded bgWhite roundBordered">
             <div class="ui items">
                 <div class="item">
                     @if (! is_null($company->company_logo))
@@ -39,66 +39,67 @@
                                 <i class="red linkify icon"></i>
                                 {{ $company->company_website }}
                             </a>
-                            <div class="ui right floated horizontal statistic">
-                                <div class="value">
-                                    {{ $jobs->count() }}
+                            @if ($openJobsCount)
+                                <div class="ui right floated horizontal statistic">
+                                    <div class="value">
+                                        {{ $openJobsCount }}
+                                    </div>
+                                    <div class="label">
+                                        {{ str_plural('open job', $openJobsCount) }}
+                                    </div>
                                 </div>
-                                <div class="label">
-                                    {{ $jobs->isEmpty() ? 'open job' : str_plural('open job', $jobs->count()) }}
-                                </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="ui divider"></div>
-        <div class="ui hidden divider"></div>
-
         <div class="ui text container">
-            <div class="ui medium horizontal divider header">Job Openings</div>
-            
-            @if ($jobs->isEmpty())
-                <p>There are currently no job openings.</p>
-            @else
-                <div class="ui divided items">
-                    @foreach ($jobs as $job)
-                        <div class="item">
-                            <div class="content">
-                                <a class="header" href="{{ $job->path() }}">
-                                    {{ $job->title }}
-                                </a>
-                                <div class="meta">
-                                    <span class="location">
-                                        <i class="red {{ $job->is_remote ? 'world' : 'marker' }} icon"></i>
-                                        {{ $job->is_remote ? 'Remote' : $job->location->name }}
-                                    </span>
-                                    <span class="ui right floated category">
-                                        <div class="ui basic {{ $job->category->color }} label">
-                                            {{ $job->category->name }}
-                                        </div>
-                                    </span>
-                                    <span class="ui right floated type">
-                                        <div class="ui basic {{ $job->type->color }} label">
-                                            {{ $job->type->name }}
-                                        </div>
-                                    </span>
-                                </div>
-                                <div class="extra">
-                                    <span class="date">
-                                        Posted: {{ $job->created_at->diffForHumans() }}
-                                    </span>
+            <div class="ui basic segment padded bgWhite roundBordered">
+                <div class="ui medium horizontal divider header">Job Openings</div>
+
+                @if ($jobs->isEmpty())
+                    <p>There are currently no job openings.</p>
+                @else
+                    <div class="ui divided items">
+                        @foreach ($jobs as $job)
+                            <div class="item">
+                                <div class="content">
+                                    <a class="header" href="{{ $job->path() }}">
+                                        {{ $job->title }}
+                                    </a>
+                                    <div class="meta">
+                                        <span class="location">
+                                            <i class="red {{ $job->is_remote ? 'world' : 'marker' }} icon"></i>
+                                            {{ $job->is_remote ? 'Remote' : $job->location->name }}
+                                        </span>
+                                        <span class="ui right floated category">
+                                            <div class="ui basic {{ $job->category->color }} label">
+                                                {{ $job->category->name }}
+                                            </div>
+                                        </span>
+                                        <span class="ui right floated type">
+                                            <div class="ui basic {{ $job->type->color }} label">
+                                                {{ $job->type->name }}
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="extra">
+                                        <span class="date">
+                                            Posted: {{ $job->created_at->diffForHumans() }}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-            @endif
+                        @endforeach
+                    </div>
+                @endif
+            </div>
 
             <div class="ui center aligned container">
                 {{ $jobs->links() }}
             </div>
-        </div> 
+        </div>
     </div>
 @endsection
