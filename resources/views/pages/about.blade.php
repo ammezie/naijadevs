@@ -10,15 +10,17 @@
 
 @section('content')
     <div class="ui container" style="padding-top: 50px; padding-bottom: 50px">
-        <h1 class="ui header">About</h1>
+        <div class="ui basic segment bgWhite roundBordered">
+            <h1 class="ui dividing header">About</h1>
 
-        <p>
-            Naijadevs is a job board that connects talented Nigerian developers and designers with companies who need them.
-        </p>
+            <p>
+                Naijadevs is a job board that connects talented Nigerian developers and designers with companies who need them.
+            </p>
 
-        <h2>Get In Touch</h2>
-        <p>
-            You can get in touch with us by shooting an email to <a href="mailto:hello@naijadevs.ng">hello@naijadevs.ng</a>, and we will get back to you not later than 48 hours from time of receipt.
-        </p>
+            <h2>Get In Touch</h2>
+            <p>
+                You can get in touch with us by shooting an email to <a href="mailto:hello@naijadevs.ng">hello@naijadevs.ng</a>, and we will get back to you not later than 48 hours from time of receipt.
+            </p>
+        </div>
     </div>
 @endsection

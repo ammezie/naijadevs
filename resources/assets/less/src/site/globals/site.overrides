@@ -7,10 +7,6 @@
     padding-bottom: 50px;
 }
 
-nav.ui.menu {
-    margin-bottom: 0;
-}
-
 .main > .segment.hero {
     background: rgba(0,176,179,1);
     background: -moz-linear-gradient(left, rgba(0,176,179,1) 0%, rgba(0,177,179,0.76) 54%);
@@ -67,4 +63,22 @@ a.ui.outline.button:hover {
 
 .footerBar a.item:hover {
     color: #ccc !important
+}
+
+.bgWhite {
+    background-color: #ffffff !important
+}
+
+.roundBordered {
+    border: 1px solid #e8e8e8 !important;
+    border-radius: 3px !important
+}
+
+.ui.menu, .ui.pagination.menu {
+    box-shadow: none !important;
+}
+
+.ui.pagination.menu .active.item {
+    background-color: #00B1B3 !important;
+    color: #ffffff !important;
 }

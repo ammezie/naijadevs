@@ -22,12 +22,12 @@
                     <label>Email</label>
                     <input type="email" name="email" placeholder="Email" required>
                 </div>
-              
+
                 <div class="field">
                     <label>Password</label>
                     <input type="password" name="password" placeholder="Password">
                 </div>
-              
+
                 <button type="submit" class="fluid ui primary button">LOG IN</button>
 
                 <div class="ui hidden divider"></div>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="right aligned column">
                         <p>
-                           <a href="{{ route('password.request') }}">Forgot password?</a> 
+                           <a href="{{ route('password.request') }}">Forgot password?</a>
                         </p>
                     </div>
                 </div>

@@ -10,8 +10,10 @@
 
 @section('content')
     <div class="ui container" style="padding-top: 50px; padding-bottom: 50px">
-        <h1 class="ui header">Pricing</h1>
+        <div class="ui basic segment bgWhite roundBordered">
+            <h1 class="ui dividing header">Pricing</h1>
 
-        <p>Posting jobs on Naijadevs is <strong>TOTALLY FREE</strong> (while still in Beta).</p>
+            <p>Posting jobs on Naijadevs is <strong>TOTALLY FREE</strong> (while still in Beta).</p>
+        </div>
     </div>
 @endsection

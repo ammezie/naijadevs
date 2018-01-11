@@ -18,6 +18,10 @@
 }
 
 nav.ui.menu {
-    border: none !important;
+    margin-bottom: 0;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+    border-left: none !important;
     border-radius: 0 !important;
 }

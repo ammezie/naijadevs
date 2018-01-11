@@ -63,3 +63,9 @@
 
 /* Used on dropdowns, other larger blocks */
 @focusedFormMutedBorderColor: @naijadevsCyan;
+
+/*-------------------
+        Page
+--------------------*/
+
+@pageBackground      : #F9F9F9;
