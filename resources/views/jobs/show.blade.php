@@ -69,7 +69,7 @@ str_limit($job->description, 160)) @section('twitter-title', $job->title) @secti
 	</div>
 
 	<div class="four wide column">
-		<div class="ui companyCard card">
+		<div class="ui fluid companyCard card">
 			<a
 				href="{{ ($job->apply == 'url') ? $job->apply_url : 'mailto:' . $job->apply_email . '?subject=' . rawurlencode($job->apply_email_subject) }}"
 				class="ui bottom attached primary button"
