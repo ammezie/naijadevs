@@ -23,7 +23,7 @@
                                 <th>Email</th>
                                 <th>Company</th>
                                 <th>Website</th>
-                                <th>Location</th>
+                                <th>Joined</th>
                                 <th colspan="3">Actions</th>
                             </tr>
                         </thead>
@@ -35,7 +35,7 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->company_name }}</td>
                                     <td>{{ $user->company_website }}</td>
-                                    <td>{{ $user->location->name }}</td>
+                                    <td>{{ $user->created_at->format('d-m-Y') }}</td>
                                     <td>
                                         <a
                                             href="{{ url('companies', $user->company_slug) }}"
