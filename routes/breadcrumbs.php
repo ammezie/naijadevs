@@ -40,3 +40,15 @@ Breadcrumbs::register('types.edit', function ($breadcrumbs, $type) {
     $breadcrumbs->parent('types.index');
     $breadcrumbs->push('Edit Job Type', route('types.edit', $type->id));
 });
+
+// Admin - users
+Breadcrumbs::register('users.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('dashboard');
+    $breadcrumbs->push('Users', route('users.index'));
+});
+
+// Admin - edit user
+Breadcrumbs::register('users.edit', function ($breadcrumbs, $user) {
+    $breadcrumbs->parent('users.index');
+    $breadcrumbs->push('Edit User', route('users.edit', $user->id));
+});

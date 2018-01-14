@@ -51,7 +51,7 @@ Route::prefix('azu')
     ->middleware(['auth', 'admin'])
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('admin.dashboard');
-        Route::get('/users', 'UsersController@index')->name('users.index');
+        Route::resource('/users', 'UsersController', ['except' => ['show']]);
         Route::get('/jobs', 'JobsController@index')->name('jobs.index');
         Route::resource('categories', 'JobCategoriesController', ['except' => ['show']]);
         Route::resource('types', 'JobTypesController', ['except' => ['show']]);
