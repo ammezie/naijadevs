@@ -2,12 +2,12 @@
     <div class="ui container">
         <div class="item">
             <a href="{{ url('/') }}">
-                <img src="{{ asset('images/logo.svg') }}" alt="Naijadevs Logo" width="145px" height="48px">
+                <img src="{{ asset('images/logo.svg') }}" alt="Naijadevs Logo" width="145" height="48">
             </a>
         </div>
         <a class="item" href="{{ url('/about') }}">About</a>
         <a class="item" href="{{ url('/pricing') }}">Pricing</a>
-    
+
         <div class="right menu">
         @if (Auth::guest())
             <a class="item" href="{{ route('login') }}">Log In</a>
@@ -20,7 +20,7 @@
             <div class="item">
                 <a class="ui primary button" href="{{ route('post_job') }}">Post a Job</a>
             </div>
-        
+
             <div class="ui pointing dropdown item">
                 My Account
                 <i class="dropdown icon"></i>

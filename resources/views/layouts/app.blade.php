@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    
+
     <title>@yield('title') - Naijadevs</title>
 
     <meta name="description" content="@yield('meta-description')">
@@ -58,7 +58,7 @@
 <body>
     <div id="app">
         @include('partials._navbar')
-        
+
         <div class="main">
             @yield('content')
         </div>
@@ -78,6 +78,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
         $('.ui.dropdown, .selection.dropdown, select.dropdown').dropdown();
+        $('.ui.accordion').accordion();
     </script>
     @stack('scripts')
 </body>

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class PagesController extends Controller
 {
     /**
@@ -43,5 +41,14 @@ class PagesController extends Controller
     public function privacy()
     {
         return view('pages.privacy');
+    }
+
+    /**
+     * FAQ page
+     * @return Response
+     */
+    public function faqs()
+    {
+        return view('pages.faqs');
     }
 }

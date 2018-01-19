@@ -14,7 +14,7 @@
             <h1 class="ui dividing header">About</h1>
 
             <p>
-                Naijadevs is a job board that connects talented Nigerian developers and designers with companies who need them.
+                Naijadevs is a job site that connects talented Nigerian developers and designers with companies and individuals who need them. It helps companies get their jobs across more Nigerian developers and also makes it easier for Nigerian developers apply for jobs.
             </p>
 
             <h2>Get In Touch</h2>

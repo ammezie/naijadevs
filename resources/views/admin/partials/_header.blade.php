@@ -1,8 +1,9 @@
 <div class="page-header navbar navbar-fixed-top">
     <div class="page-header-inner ">
         <div class="page-logo">
-            <a href="index.html">
-                <img src="{{ asset('images/logo.png') }}" alt="logo" class="logo-default" /> </a>
+            <a href="{{ route('admin.dashboard') }}">
+                <img src="{{ asset('images/logo.svg') }}" alt="Naijadevs Logo" class="logo-default">
+            </a>
             <div class="menu-toggler sidebar-toggler">
                 <span></span>
             </div>

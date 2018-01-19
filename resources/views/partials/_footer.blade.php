@@ -27,6 +27,7 @@
                 <a class="item" href="{{ url('/about') }}">About</a>
                 <a class="item" href="{{ url('/pricing') }}">Pricing</a>
                 <a class="item" href="https://blog.naijadevs.ng">Blog</a>
+                <a class="item" href="{{ url('/faqs') }}">FAQs</a>
                 <a class="item" href="{{ url('/terms') }}">Terms</a>
                 <a class="item" href="{{ url('/privacy') }}">Privacy</a>
             </div>
