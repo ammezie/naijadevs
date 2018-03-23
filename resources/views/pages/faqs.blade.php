@@ -20,7 +20,7 @@
                 </div>
                 <div class="content">
                     <p class="transition hidden">
-                         Naijadevs is a job site that connects talented Nigerian developers and designers with companiesn and individuals who need them. It helps companies get their jobs across more Nigerian developers and also makes it easier for Nigerian developers apply for jobs.
+                         Naijadevs is a job site that connects talented Nigerian developers and designers with companies and individuals who need them. It helps companies get their jobs across more Nigerian developers and also makes it easier for Nigerian developers apply for jobs.
                     </p>
                 </div>
 
